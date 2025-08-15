@@ -1,8 +1,11 @@
+﻿import { Routes, Route } from "react-router-dom"
 import Breadcrumb from "./Components/Breadcrumb"
 import Footer from "./Components/Footer"
 import Nav from "./Components/Nav"
-import Index from "./Pages"
-
+import Index from "./Pages/Index"
+import Persons from "./Pages/Person/Persons"
+import Persondetail from "./Pages/Person/Persondetail"
+import Addperson from "./Pages/Person/Addperson"
 
 function App() {
 
@@ -17,7 +20,12 @@ function App() {
 
             <Breadcrumb />
 
-            <Index />
+                <Routes>
+                    <Route path="/" element={<Index />} />
+                    <Route path="/persons" element={<Persons />} />
+                    <Route path="/persondetail" element={<Persondetail />} />
+                    <Route path="/addperson" element={<Addperson />} />
+                </Routes>
 
             <Footer />
 
@@ -331,7 +339,8 @@ function App() {
         target="_blank" href="https://softnio.com/get-early-access/">
         <div className="pmo-text text-white">Looking for functional script for Investment Platform? Check out <em
           className="ni ni-arrow-long-right"></em></div>
-      </a></div><a className="pmo-st pmo-dark" target="_blank" href="https://softnio.com/get-early-access/">
+      </a></div>
+      <a className="pmo-st pmo-dark" target="_blank" href="https://softnio.com/get-early-access/">
         <div className="pmo-st-img"><img src="/src/assets/images/landing/promo-investorm.png" alt="Investorm" /></div>
         <div className="pmo-st-text">Looking for Advanced <br /> Investment Platform?</div>
       </a>

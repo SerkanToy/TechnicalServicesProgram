@@ -19,7 +19,7 @@ function Breadcrumb() {
                             <ul className="nk-menu nk-menu-main">
                                 <li className="nk-menu-item has-sub"><a href="#"
                                     className="nk-menu-link nk-menu-toggle"><span
-                                        className="nk-menu-text">Dashboards</span></a>
+                                        className="nk-menu-text">Anasayfa</span></a>
                                     <ul className="nk-menu-sub">
                                         <li className="nk-menu-item"><a href="index.html" className="nk-menu-link"><span
                                             className="nk-menu-text">Default Dashboard</span></a></li>

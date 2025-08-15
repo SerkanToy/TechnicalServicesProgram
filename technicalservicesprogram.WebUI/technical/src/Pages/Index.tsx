@@ -5,6 +5,7 @@ function Index() {
         <div className="nk-content nk-content-fluid">
             <div className="container-xl wide-xl">
                 <div className="nk-content-body">
+
                     <div className="nk-block-head nk-block-head-sm">
                         <div className="nk-block-between">
                             <div className="nk-block-head-content">
@@ -36,6 +37,7 @@ function Index() {
                             </div>
                         </div>
                     </div>
+
                     <div className="nk-block">
                         <div className="row g-gs">
                             <div className="col-lg-3 col-sm-6">
