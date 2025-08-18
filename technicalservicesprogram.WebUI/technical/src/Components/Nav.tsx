@@ -19,12 +19,18 @@ function Nav() {
                     <div className="nk-sidebar-menu" data-simplebar>
                         <ul className="nk-menu">
                             <li className="nk-menu-heading">
-                                <h6 className="overline-title text-primary-alt">Use-Case Preview</h6>
+                                <h6 className="overline-title text-primary-alt">Menü</h6>
                             </li>
-                            <li className="nk-menu-item"><a href="copywriter/index.html" className="nk-menu-link"><span
-                                className="nk-menu-icon"><em className="icon ni ni-bag"></em></span><span
-                                    className="nk-menu-text">AI Copywriter</span><span
-                                        className="nk-menu-badge">HOT</span></a></li>
+                            <li className="nk-menu-item">
+                                <a href="/" className="nk-menu-link">
+                                    <span className="nk-menu-icon">
+                                        <em className="icon ni ni-home"></em>
+                                    </span>
+                                    <span className="nk-menu-text">
+                                        Anasayfa
+                                    </span>
+                                </a>
+                            </li>
                             <li className="nk-menu-heading">
                                 <h6 className="overline-title text-primary-alt">Dashboards</h6>
                             </li>
