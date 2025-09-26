@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace technicalservicesprogram.DataAccess.Domain.Entities.Users
+namespace technicalservicesprogram.Entities.Core.Users
 {
-    public class UserApp: IdentityUser<Guid>
+    public class UserLogin : IdentityUserLogin<string>
     {
     }
 }

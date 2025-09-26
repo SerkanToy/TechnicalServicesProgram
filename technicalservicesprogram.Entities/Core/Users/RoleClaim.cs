@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace technicalservicesprogram.DataAccess.Domain.Entities.Users
+namespace technicalservicesprogram.Entities.Core.Users
 {
-    public class UserClaim : IdentityUserClaim<Guid>
+    public class RoleClaim : IdentityRoleClaim<string>
     {
     }
 }
