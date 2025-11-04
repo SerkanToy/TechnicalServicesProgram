@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using technicalservicesprogram.DataAccess.Context;
+using technicalservicesprogram.DataAccess.Repositories;
 using technicalservicesprogram.Entities.Core.Users;
 
 namespace technicalservicesprogram.DataAccess
@@ -20,12 +21,7 @@ namespace technicalservicesprogram.DataAccess
                 .AddRoles<RoleApp>()
                 .AddEntityFrameworkStores<TspDatabase>();
 
-            /*services.Scan(selector => selector
-                .FromAssemblies(typeof(DependencyInjection).Assembly)
-                .AddClasses(publicOnly: false)
-                .UsingRegistrationStrategy(RegistrationStrategy.Skip)
-                .AsMatchingInterface()
-                .WithScopedLifetime());*/
+            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
             return services;
         }

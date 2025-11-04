@@ -12,8 +12,8 @@ using technicalservicesprogram.DataAccess.Context;
 namespace technicalservicesprogram.DataAccess.Migrations
 {
     [DbContext(typeof(TspDatabase))]
-    [Migration("20250926124137_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20251006122925_InitialUpdate")]
+    partial class InitialUpdate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -30,18 +30,10 @@ namespace technicalservicesprogram.DataAccess.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateOnly>("CreateDate")
+                        .HasColumnType("date");
 
                     b.Property<string>("UserAppId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("UserId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
@@ -52,8 +44,6 @@ namespace technicalservicesprogram.DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("UserAppId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("DateUserCreate");
                 });
@@ -63,18 +53,10 @@ namespace technicalservicesprogram.DataAccess.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<TimeOnly>("CreateTime")
+                        .HasColumnType("time");
 
                     b.Property<string>("UserAppId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("UserId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
@@ -85,8 +67,6 @@ namespace technicalservicesprogram.DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("UserAppId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("TimeUserCreate");
                 });
@@ -145,9 +125,15 @@ namespace technicalservicesprogram.DataAccess.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
                     b.Property<bool>("LockoutEnabled")
@@ -184,7 +170,7 @@ namespace technicalservicesprogram.DataAccess.Migrations
 
                     b.Property<string>("SicilNo")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("SurName")
                         .IsRequired()
@@ -198,25 +184,34 @@ namespace technicalservicesprogram.DataAccess.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("Email")
+                        .IsUnique()
+                        .HasFilter("[Email] IS NOT NULL");
+
+                    b.HasIndex("SicilNo")
+                        .IsUnique();
+
                     b.ToTable("Users", (string)null);
 
                     b.HasData(
                         new
                         {
-                            Id = "5145c20e-3ff6-4f0f-b760-bbd5ab9a091e",
+                            Id = "9a4f0a34-7636-403c-a76b-dff0641abb20",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c566b8b1-a198-45fe-88a1-2b339bc7fce0",
+                            ConcurrencyStamp = "d6df545a-b4ad-40bb-932d-9ced3ff8f751",
                             Email = "stoy@sakarya.edu.tr",
                             EmailConfirmed = false,
+                            IsActive = true,
+                            IsDeleted = false,
                             LockoutEnabled = false,
                             Name = "Serkan",
                             NormalizedEmail = "STOY@SAKARYA.EDU.TR",
                             NormalizedUserName = "STOY",
-                            PasswordHash = "NvXPMYn7mrBibtmGCOpxsKFDq1pHpVPXM/Hz0qN0Tkw=",
+                            PasswordHash = "XOnj12+jImVcaXKn7pbSspKwYeWSz4+eyQfF/TOMElQ=",
                             PhoneNumber = "0(564) 295 50 92",
                             PhoneNumberConfirmed = false,
                             Salt = "System.Byte[]",
-                            SecurityStamp = "82f32c87-2a99-4a54-8246-a47a301f95c2",
+                            SecurityStamp = "649e1589-e876-442b-9e82-d41d5bf160f4",
                             SicilNo = "944",
                             SurName = "TOY",
                             TwoFactorEnabled = false,
@@ -224,20 +219,22 @@ namespace technicalservicesprogram.DataAccess.Migrations
                         },
                         new
                         {
-                            Id = "0dfcb4e1-45be-47f4-bee9-ae23c5fe24d7",
+                            Id = "089d6e50-2972-43be-9f8f-6d379e146fe3",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "09d527e1-b87e-48f8-bbf5-6d43cbb12a5a",
+                            ConcurrencyStamp = "e03f424a-fbb4-4a95-9ec9-c4a8f76bbb69",
                             Email = "stoy@sakarya.edu.tr",
                             EmailConfirmed = false,
+                            IsActive = true,
+                            IsDeleted = false,
                             LockoutEnabled = false,
                             Name = "Serkan",
                             NormalizedEmail = "STOY@SAKARYA.EDU.TR",
                             NormalizedUserName = "STOY",
-                            PasswordHash = "6TJpYeVO8Aj+F94xqRCqQf8/2TPBQ/gAqblWzOQ56m4=",
+                            PasswordHash = "miism5gLi6mAAECA4DEdc2Uatfz0eDjpNcJRUcFaenA=",
                             PhoneNumber = "0(564) 295 50 92",
                             PhoneNumberConfirmed = false,
                             Salt = "System.Byte[]",
-                            SecurityStamp = "1302e6dc-c28b-4a06-b96a-3c6755edf960",
+                            SecurityStamp = "362f4c6b-1634-4bae-86f7-5205836f3c91",
                             SicilNo = "944",
                             SurName = "TOY",
                             TwoFactorEnabled = false,
@@ -322,14 +319,10 @@ namespace technicalservicesprogram.DataAccess.Migrations
 
             modelBuilder.Entity("technicalservicesprogram.Entities.Core.CreateUpdateDelete.DateUserCreate", b =>
                 {
-                    b.HasOne("technicalservicesprogram.Entities.Core.Users.UserApp", null)
-                        .WithMany("DateUserCreates")
-                        .HasForeignKey("UserAppId");
-
                     b.HasOne("technicalservicesprogram.Entities.Core.Users.UserApp", "UserApp")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .WithMany("DateUserCreates")
+                        .HasForeignKey("UserAppId")
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("UserApp");
@@ -337,14 +330,10 @@ namespace technicalservicesprogram.DataAccess.Migrations
 
             modelBuilder.Entity("technicalservicesprogram.Entities.Core.CreateUpdateDelete.TimeUserCreate", b =>
                 {
-                    b.HasOne("technicalservicesprogram.Entities.Core.Users.UserApp", null)
-                        .WithMany("TimeUserCreates")
-                        .HasForeignKey("UserAppId");
-
                     b.HasOne("technicalservicesprogram.Entities.Core.Users.UserApp", "UserApp")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .WithMany("TimeUserCreates")
+                        .HasForeignKey("UserAppId")
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("UserApp");

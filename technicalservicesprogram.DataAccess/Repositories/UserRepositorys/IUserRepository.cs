@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace technicalservicesprogram.DataAccess.Enum
+namespace technicalservicesprogram.DataAccess.Repositories.UserRepositorys
 {
-    public enum FormStatus
+    public interface IUserRepository
     {
     }
 }

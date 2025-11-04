@@ -90,11 +90,13 @@ namespace technicalservicesprogram.DataAccess.Migrations
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     SurName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    SicilNo = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    SicilNo = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Salt = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Email = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     NormalizedEmail = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     EmailConfirmed = table.Column<bool>(type: "bit", nullable: false),
                     PasswordHash = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -131,11 +133,9 @@ namespace technicalservicesprogram.DataAccess.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreateDate = table.Column<DateOnly>(type: "date", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    UserAppId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                    UserAppId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -145,12 +145,6 @@ namespace technicalservicesprogram.DataAccess.Migrations
                         column: x => x.UserAppId,
                         principalTable: "Users",
                         principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_DateUserCreate_Users_UserId",
-                        column: x => x.UserId,
-                        principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -158,11 +152,9 @@ namespace technicalservicesprogram.DataAccess.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreateTime = table.Column<TimeOnly>(type: "time", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    UserAppId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                    UserAppId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -172,20 +164,14 @@ namespace technicalservicesprogram.DataAccess.Migrations
                         column: x => x.UserAppId,
                         principalTable: "Users",
                         principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_TimeUserCreate_Users_UserId",
-                        column: x => x.UserId,
-                        principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.InsertData(
                 table: "Users",
-                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "Name", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "Salt", "SecurityStamp", "SicilNo", "SurName", "TwoFactorEnabled", "UserName" },
+                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "IsActive", "IsDeleted", "LockoutEnabled", "LockoutEnd", "Name", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "Salt", "SecurityStamp", "SicilNo", "SurName", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "0dfcb4e1-45be-47f4-bee9-ae23c5fe24d7", 0, "09d527e1-b87e-48f8-bbf5-6d43cbb12a5a", "stoy@sakarya.edu.tr", false, false, null, "Serkan", "STOY@SAKARYA.EDU.TR", "STOY", "6TJpYeVO8Aj+F94xqRCqQf8/2TPBQ/gAqblWzOQ56m4=", "0(564) 295 50 92", false, "System.Byte[]", "1302e6dc-c28b-4a06-b96a-3c6755edf960", "944", "TOY", false, "stoy" }
+                    { "2fff5c5b-378a-45de-ab29-159d2543990f", 0, "0b6db7ca-42c4-4347-9079-bac7c5c34d03", "stoy@sakarya.edu.tr", false, true, false, false, null, "Serkan", "STOY@SAKARYA.EDU.TR", "STOY", "xGYrQsoMNQs5/fB8klvmi9JK+V18QDfTe4SB1s/+TTo=", "0(564) 295 50 92", false, "System.Byte[]", "30aaf8d6-8707-4b51-b43d-5ac6e3c9aa0c", "944", "TOY", false, "stoy" }
                 });
 
             migrationBuilder.CreateIndex(
@@ -194,19 +180,22 @@ namespace technicalservicesprogram.DataAccess.Migrations
                 column: "UserAppId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_DateUserCreate_UserId",
-                table: "DateUserCreate",
-                column: "UserId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_TimeUserCreate_UserAppId",
                 table: "TimeUserCreate",
                 column: "UserAppId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_TimeUserCreate_UserId",
-                table: "TimeUserCreate",
-                column: "UserId");
+                name: "IX_Users_Email",
+                table: "Users",
+                column: "Email",
+                unique: true,
+                filter: "[Email] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Users_SicilNo",
+                table: "Users",
+                column: "SicilNo",
+                unique: true);
         }
 
         /// <inheritdoc />

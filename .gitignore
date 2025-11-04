@@ -483,13 +483,17 @@ $RECYCLE.BIN/
 # Vim temporary swap files
 *.swp
 
-technicalservicesprogram.DataAccess/Context/*
-technicalservicesprogram.DataAccess/bin/*
-technicalservicesprogram.DataAccess/obj/*
+technicalservicesprogram.DataAccess/Context/*.*
+technicalservicesprogram.DataAccess/bin/*.*
+technicalservicesprogram.DataAccess/bin
+technicalservicesprogram.DataAccess/obj/*.*
+technicalservicesprogram.DataAccess/obj
 
 
-technicalservicesprogram.Broadcast/bin/*
+technicalservicesprogram.Broadcast/bin/*.*
+technicalservicesprogram.Broadcast/bin
 technicalservicesprogram.Broadcast/obj/*
+technicalservicesprogram.Broadcast/obj
 technicalservicesprogram.Broadcast/appsettings.json
 technicalservicesprogram.Broadcast/appsettings.Development.json
 

@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Domain\" />
+    <Folder Include="Repositories\NewFolder1\" />
   </ItemGroup>
 
 </Project>

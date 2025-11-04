@@ -13,6 +13,10 @@ namespace technicalservicesprogram.DataAccess.Configurations.UserCon
         {
             builder.ToTable("Users");
             builder.HasKey(u => u.Id);
+            builder.HasIndex(u => u.Email).IsUnique();
+            builder.HasIndex(u => u.SicilNo).IsUnique();
+            builder.HasMany(dc => dc.DateUserCreates).WithOne(dc => dc.UserApp).OnDelete(DeleteBehavior.NoAction);
+            builder.HasMany(dc => dc.TimeUserCreates).WithOne(dc => dc.UserApp).OnDelete(DeleteBehavior.NoAction);
             builder.HasData(User());
         }
 

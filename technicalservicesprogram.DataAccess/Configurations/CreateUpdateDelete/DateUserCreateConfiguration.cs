@@ -9,7 +9,7 @@ namespace technicalservicesprogram.DataAccess.Configurations.CreateUpdateDelete
         public void Configure(EntityTypeBuilder<DateUserCreate> builder)
         {
             builder.HasKey(dc => dc.Id);
-            builder.HasOne(dc => dc.UserApp).WithMany().HasForeignKey(dc => dc.UserId).OnDelete(DeleteBehavior.Restrict);
+            builder.HasOne(dc => dc.UserApp).WithMany(dc => dc.DateUserCreates).OnDelete(DeleteBehavior.NoAction);
         }
     }
 }

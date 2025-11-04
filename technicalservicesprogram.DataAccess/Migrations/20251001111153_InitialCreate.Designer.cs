@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using technicalservicesprogram.DataAccess.Context;
 
@@ -11,9 +12,11 @@ using technicalservicesprogram.DataAccess.Context;
 namespace technicalservicesprogram.DataAccess.Migrations
 {
     [DbContext(typeof(TspDatabase))]
-    partial class TspDatabaseModelSnapshot : ModelSnapshot
+    [Migration("20251001111153_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -193,9 +196,9 @@ namespace technicalservicesprogram.DataAccess.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "9a4f0a34-7636-403c-a76b-dff0641abb20",
+                            Id = "34e8bd8e-246b-4fb3-a477-a3ff4cf631f2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d6df545a-b4ad-40bb-932d-9ced3ff8f751",
+                            ConcurrencyStamp = "89645613-fadb-45d0-9d2d-6bd97a1555f7",
                             Email = "stoy@sakarya.edu.tr",
                             EmailConfirmed = false,
                             IsActive = true,
@@ -204,11 +207,11 @@ namespace technicalservicesprogram.DataAccess.Migrations
                             Name = "Serkan",
                             NormalizedEmail = "STOY@SAKARYA.EDU.TR",
                             NormalizedUserName = "STOY",
-                            PasswordHash = "XOnj12+jImVcaXKn7pbSspKwYeWSz4+eyQfF/TOMElQ=",
+                            PasswordHash = "0xjnN1gbu/FINRAyOz5225lW3IFsKdtOxUT950XmkAo=",
                             PhoneNumber = "0(564) 295 50 92",
                             PhoneNumberConfirmed = false,
                             Salt = "System.Byte[]",
-                            SecurityStamp = "649e1589-e876-442b-9e82-d41d5bf160f4",
+                            SecurityStamp = "7e418eaa-da1b-43bf-9a08-194198caf2a6",
                             SicilNo = "944",
                             SurName = "TOY",
                             TwoFactorEnabled = false,
@@ -216,9 +219,9 @@ namespace technicalservicesprogram.DataAccess.Migrations
                         },
                         new
                         {
-                            Id = "089d6e50-2972-43be-9f8f-6d379e146fe3",
+                            Id = "2fff5c5b-378a-45de-ab29-159d2543990f",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "e03f424a-fbb4-4a95-9ec9-c4a8f76bbb69",
+                            ConcurrencyStamp = "0b6db7ca-42c4-4347-9079-bac7c5c34d03",
                             Email = "stoy@sakarya.edu.tr",
                             EmailConfirmed = false,
                             IsActive = true,
@@ -227,11 +230,11 @@ namespace technicalservicesprogram.DataAccess.Migrations
                             Name = "Serkan",
                             NormalizedEmail = "STOY@SAKARYA.EDU.TR",
                             NormalizedUserName = "STOY",
-                            PasswordHash = "miism5gLi6mAAECA4DEdc2Uatfz0eDjpNcJRUcFaenA=",
+                            PasswordHash = "xGYrQsoMNQs5/fB8klvmi9JK+V18QDfTe4SB1s/+TTo=",
                             PhoneNumber = "0(564) 295 50 92",
                             PhoneNumberConfirmed = false,
                             Salt = "System.Byte[]",
-                            SecurityStamp = "362f4c6b-1634-4bae-86f7-5205836f3c91",
+                            SecurityStamp = "30aaf8d6-8707-4b51-b43d-5ac6e3c9aa0c",
                             SicilNo = "944",
                             SurName = "TOY",
                             TwoFactorEnabled = false,

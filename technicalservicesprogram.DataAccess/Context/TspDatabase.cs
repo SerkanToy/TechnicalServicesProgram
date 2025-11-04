@@ -13,6 +13,8 @@ namespace technicalservicesprogram.DataAccess.Context
         public TspDatabase(DbContextOptions<TspDatabase> options) : base(options)
         {
         }
+
+        // Kullanıcı işlemleri
         public DbSet<UserApp> UserApp { get; set; }
         public DbSet<RoleApp> RoleApp { get; set; }
         public DbSet<UserClaim> UserClaim { get; set; }
@@ -22,6 +24,7 @@ namespace technicalservicesprogram.DataAccess.Context
         public DbSet<UserToken> UserToken { get; set; }
 
 
+        // Oluşturma, Güncelleme, Silme işlemleri tarihleri
         public DbSet<DateUserCreate> DateUserCreate { get; set; }
         public DbSet<TimeUserCreate> TimeUserCreate { get; set; }
 
