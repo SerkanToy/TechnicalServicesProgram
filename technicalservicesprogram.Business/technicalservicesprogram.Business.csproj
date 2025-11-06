@@ -17,9 +17,4 @@
     <ProjectReference Include="..\technicalservicesprogram.DataAccess\technicalservicesprogram.DataAccess.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Abstraction\" />
-    <Folder Include="Concrete\" />
-  </ItemGroup>
-
 </Project>
