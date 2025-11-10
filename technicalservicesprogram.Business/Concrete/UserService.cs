@@ -17,7 +17,7 @@ namespace technicalservicesprogram.Business.Concrete
             this.userManager = userManager;
         }
 
-        public IQueryable<UserApp> GetA llUsers()
+        public IQueryable<UserApp> GetAll()
         {
             return userManager.Users;
         }   
