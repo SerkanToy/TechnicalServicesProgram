@@ -52,7 +52,7 @@ namespace technicalservicesprogram.DataAccess.Context
 
             builder.ApplyConfigurationsFromAssembly(typeof(TspDatabase).Assembly);
 
-            //base.OnModelCreating(builder);
+            base.OnModelCreating(builder);
         }
 
     }

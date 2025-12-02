@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using technicalservicesprogram.Business.Abstraction;
 using technicalservicesprogram.DataAccess.Context;
 using technicalservicesprogram.Entities.Core;
@@ -17,11 +18,15 @@ namespace technicalservicesprogram.Business.Concrete
         private readonly TspDatabase tspDatabase;
         private readonly ApiResponse response;
         private string secretKey;
+        private string audience;
+        private string issuer;
         public AuthService(TspDatabase tspDatabase, ApiResponse response, IConfiguration _configuration, UserManager<UserApp> userManager)
         {
             this.tspDatabase = tspDatabase;
             this.response = response;
             secretKey = _configuration.GetSection("AppSettings:Secret").Value!;
+            audience = _configuration.GetSection("AppSettings:Audience").Value!;
+            issuer = _configuration.GetSection("AppSettings:Issuer").Value!;
             this.userManager = userManager;
         }
 
@@ -44,16 +49,28 @@ namespace technicalservicesprogram.Business.Concrete
                 JwtSecurityTokenHandler tokenHandler = new JwtSecurityTokenHandler();
                 byte[] key = System.Text.Encoding.ASCII.GetBytes(secretKey);
 
+                List<Claim> claims = new List<Claim>
+                {
+                    new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+                    new Claim("FullName", $"{user.Name.ToUpper()} {user.SurName.ToUpper()}"),
+                    new Claim(ClaimTypes.Name, $"{user.UserName}"),
+                    new Claim(ClaimTypes.Email, $"{user.Email}")                    
+                };
+
+                if(role is not null)
+                {
+                    foreach (var item in role)
+                    {
+                        claims.Add(new Claim(ClaimTypes.Role, $"{item}"));
+                    }
+                }
+
                 SecurityTokenDescriptor tokenDescriptor = new SecurityTokenDescriptor
                 {
-                    Subject = new System.Security.Claims.ClaimsIdentity(new[]
-                    {
-                        new System.Security.Claims.Claim("Id", user.Id.ToString()),
-                        new System.Security.Claims.Claim(System.Security.Claims.ClaimTypes.Name, $"{user.UserName} {user.SurName.ToUpper()}"),
-                        new System.Security.Claims.Claim(System.Security.Claims.ClaimTypes.Email, $"{user.Email}"),
-                        new System.Security.Claims.Claim(System.Security.Claims.ClaimTypes.Role, role.FirstOrDefault() ?? UserType.NormalUser.ToString()),
-                    }),
-                    Expires = DateTime.UtcNow.AddSeconds(5),
+                    Audience = audience,
+                    Issuer = issuer,    
+                    Subject = new ClaimsIdentity(claims),
+                    Expires = DateTime.UtcNow.AddHours(1),
                     SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
                 };
 
@@ -64,7 +81,8 @@ namespace technicalservicesprogram.Business.Concrete
                 response.Result = new TokenDTO
                 {
                     Email = user.Email!,
-                    Token = tokenHandler.WriteToken(token)
+                    AccessToken = tokenHandler.WriteToken(token),
+                    RefreshToken = Guid.NewGuid().ToString()
                 };
 
                 return response;

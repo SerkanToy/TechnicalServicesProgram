@@ -5,6 +5,7 @@ namespace technicalservicesprogram.Entities.Core.Enum
 {
     public enum UserType
     {
+        SuperUser,
         NormalUser,
         TechnicalUser,
         ManagerUser,

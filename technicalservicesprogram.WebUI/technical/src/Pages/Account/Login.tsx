@@ -13,10 +13,10 @@ function Login() {
                                         className="icon ni ni-info"></em></a></div>
                                 <div className="nk-block nk-block-middle nk-auth-body">
                                     <div className="brand-logo pb-5"><a href="../../index.html" className="logo-link"><img
-                                        className="logo-light logo-img logo-img-lg" src="/src/assets/images/logo.png"
-                                        srcSet="/demo9/images/logo2x.png 2x" alt="logo" /><img
-                                            className="logo-dark logo-img logo-img-lg" src="/src/assets/images/logo-dark.png"
-                                            srcSet="/demo9/images/logo-dark2x.png 2x" alt="logo-dark" /></a></div>
+                                        className="logo-light logo-img logo-img-lg" src="./assets/images/logo.png"
+                                        srcSet="./assets/images/logo2x.png 2x" alt="logo" /><img
+                                            className="logo-dark logo-img logo-img-lg" src="./assets/images/logo-dark.png"
+                                            srcSet="./assets/images/logo-dark2x.png 2x" alt="logo-dark" /></a></div>
                                     <div className="nk-block-head">
                                         <div className="nk-block-head-content">
                                             <h5 className="nk-block-title">Bilgi İşlem Daire Başkanlığı</h5>
@@ -68,25 +68,25 @@ function Login() {
                                                     <ul className="language-list">
                                                         <li>
                                                             <a href="#" className="language-item">
-                                                                <img src="/src/assets/images/flags/english.png" alt="" className="language-flag" />
+                                                                <img src="./assets/images/flags/english.png" alt="" className="language-flag" />
                                                                 <span className="language-name">English</span>
                                                             </a>
                                                         </li>
                                                         <li>
                                                             <a href="#" className="language-item">
-                                                                <img src="/src/assets/images/flags/spanish.png" alt="" className="language-flag" />
+                                                                <img src="./assets/images/flags/spanish.png" alt="" className="language-flag" />
                                                                 <span className="language-name">Español</span>
                                                             </a>
                                                         </li>
                                                         <li>
                                                             <a href="#" className="language-item">
-                                                                <img src="/src/assets/images/flags/french.png" alt="" className="language-flag" />
+                                                                <img src="./assets/images/flags/french.png" alt="" className="language-flag" />
                                                                 <span className="language-name">Français</span>
                                                             </a>
                                                         </li>
                                                         <li>
                                                             <a href="#" className="language-item">
-                                                                <img src="/src/assets/images/flags/turkey.png" alt="" className="language-flag" />
+                                                                <img src="./assets/images/flags/turkey.png" alt="" className="language-flag" />
                                                                 <span className="language-name">Türkçe</span>
                                                             </a>
                                                         </li>
@@ -108,7 +108,8 @@ function Login() {
                                         <div className="slider-item">
                                             <div className="nk-feature nk-feature-center">
                                                 <div className="nk-feature-img">
-                                                    <img className="round" width={"100%"} src="/src/assets/images/slides/promo-aa.png" srcSet="/src/assets/images/slides/promo-aa.png 2x" alt="" />
+                                                    <img className="round" width={"100%"} src="./assets/images/slides/promo-a.png" 
+                                                    srcSet="./assets/images/slides/promo-aa.png 2x" alt="" />
                                                 </div>
                                                 
                                             </div>

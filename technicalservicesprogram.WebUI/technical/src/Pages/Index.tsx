@@ -2,800 +2,810 @@ import React from 'react'
 
 function Index() {
     return (
-        <div className="nk-content nk-content-fluid">
-            <div className="container-xl wide-xl">
-                <div className="nk-content-body">
-
-                    <div className="nk-block-head nk-block-head-sm">
-                        <div className="nk-block-between">
-                            <div className="nk-block-head-content">
-                                <h3 className="nk-block-title page-title">Campaign Management</h3>
-                                <div className="nk-block-des text-soft">
-                                    <p>Welcome to Campaign Management Dashboard.</p>
-                                </div>
-                            </div>
-                            <div className="nk-block-head-content">
-                                <div className="toggle-wrap nk-block-tools-toggle"><a href="#"
-                                    className="btn btn-icon btn-trigger toggle-expand me-n1"
-                                    data-target="pageMenu"><em className="icon ni ni-more-v"></em></a>
-                                    <div className="toggle-expand-content" data-content="pageMenu">
-                                        <ul className="nk-block-tools g-3">
-                                            <li><a href="#"
-                                                className="dropdown-toggle btn btn-white btn-dim btn-outline-light"
-                                                data-bs-toggle="dropdown"><em
-                                                    className="icon ni ni-plus"></em><span><span
-                                                        className="d-md-none">Add</span><span
-                                                            className="d-none d-md-block">Add
-                                                        Campaign</span></span></a></li>
-                                            <li className="nk-block-tools-opt"><a href="#"
-                                                className="btn btn-primary"><em
-                                                    className="icon ni ni-reports"></em><span>Reports</span></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+        <div className="nk-content-wrap">
+            <div className="nk-block-head nk-block-head-sm">
+                <div className="nk-block-between">
+                    <div className="nk-block-head-content">
+                        <h3 className="nk-block-title page-title">Overview</h3>
+                        <div className="nk-block-des text-soft">
+                            <p>Welcome to DashLite Dashboard Template.</p>
                         </div>
                     </div>
-
-                    <div className="nk-block">
-                        <div className="row g-gs">
-                            <div className="col-lg-3 col-sm-6">
-                                <div className="card h-100 bg-primary">
-                                    <div className="nk-cmwg nk-cmwg1">
-                                        <div className="card-inner pt-3">
-                                            <div className="d-flex justify-content-between">
-                                                <div className="flex-item">
-                                                    <div className="text-white d-flex flex-wrap"><span
-                                                        className="fs-2 me-1">56.8K</span><span
-                                                            className="align-self-end fs-14px pb-1"><em
-                                                                className="icon ni ni-arrow-long-up"></em>12.4%</span>
-                                                    </div>
-                                                    <h6 className="text-white">Running Campaign</h6>
-                                                </div>
-                                                <div className="card-tools me-n1">
-                                                    <div className="dropdown"><a href="#"
-                                                        className="dropdown-toggle btn btn-icon btn-sm btn-trigger on-dark"
-                                                        data-bs-toggle="dropdown"><em
-                                                            className="icon ni ni-more-v"></em></a>
-                                                        <div
-                                                            className="dropdown-menu dropdown-menu-sm dropdown-menu-end">
-                                                            <ul className="link-list-opt no-bdr">
-                                                                <li><a href="#" className="active"><span>15
-                                                                    Days</span></a></li>
-                                                                <li><a href="#"><span>30 Days</span></a></li>
-                                                                <li><a href="#"><span>3 Months</span></a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="nk-ck-wrap mt-auto overflow-hidden rounded-bottom">
-                                            <div className="nk-cmwg1-ck"><canvas
-                                                className="campaign-line-chart-s1 rounded-bottom"
-                                                id="runningCampaign"></canvas></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-sm-6">
-                                <div className="card h-100 bg-info">
-                                    <div className="nk-cmwg nk-cmwg1">
-                                        <div className="card-inner pt-3">
-                                            <div className="d-flex justify-content-between">
-                                                <div className="flex-item">
-                                                    <div className="text-white d-flex flex-wrap"><span
-                                                        className="fs-2 me-1">857.6K</span><span
-                                                            className="align-self-end fs-14px pb-1"><em
-                                                                className="icon ni ni-arrow-long-up"></em>12.4%</span>
-                                                    </div>
-                                                    <h6 className="text-white">Total Audience</h6>
-                                                </div>
-                                                <div className="card-tools me-n1">
-                                                    <div className="dropdown"><a href="#"
-                                                        className="dropdown-toggle btn btn-icon btn-sm btn-trigger on-dark"
-                                                        data-bs-toggle="dropdown"><em
-                                                            className="icon ni ni-more-v"></em></a>
-                                                        <div
-                                                            className="dropdown-menu dropdown-menu-sm dropdown-menu-end">
-                                                            <ul className="link-list-opt no-bdr">
-                                                                <li><a href="#" className="active"><span>15
-                                                                    Days</span></a></li>
-                                                                <li><a href="#"><span>30 Days</span></a></li>
-                                                                <li><a href="#"><span>3 Months</span></a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="nk-cmwg1-ck mt-auto"><canvas
-                                            className="campaign-line-chart-s1 rounded-bottom"
-                                            id="totalAudience"></canvas></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-sm-6">
-                                <div className="card h-100 bg-warning">
-                                    <div className="nk-cmwg nk-cmwg1">
-                                        <div className="card-inner pt-3">
-                                            <div className="d-flex justify-content-between">
-                                                <div className="flex-item">
-                                                    <div className="text-white d-flex flex-wrap"><span
-                                                        className="fs-2 me-1">9.3K</span><span
-                                                            className="align-self-end fs-14px pb-1"><em
-                                                                className="icon ni ni-arrow-long-up"></em>12.4%</span>
-                                                    </div>
-                                                    <h6 className="text-white">Avg. Rating</h6>
-                                                </div>
-                                                <div className="card-tools me-n1">
-                                                    <div className="dropdown"><a href="#"
-                                                        className="dropdown-toggle btn btn-icon btn-sm btn-trigger on-dark"
-                                                        data-bs-toggle="dropdown"><em
-                                                            className="icon ni ni-more-v"></em></a>
-                                                        <div
-                                                            className="dropdown-menu dropdown-menu-sm dropdown-menu-end">
-                                                            <ul className="link-list-opt no-bdr">
-                                                                <li><a href="#" className="active"><span>15
-                                                                    Days</span></a></li>
-                                                                <li><a href="#"><span>30 Days</span></a></li>
-                                                                <li><a href="#"><span>3 Months</span></a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="nk-ck-wrap mt-auto overflow-hidden rounded-bottom">
-                                            <div className="nk-cmwg1-ck"><canvas
-                                                className="campaign-bar-chart-s1 rounded-bottom"
-                                                id="avgRating"></canvas></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-sm-6">
-                                <div className="card h-100 bg-danger">
-                                    <div className="nk-cmwg nk-cmwg1">
-                                        <div className="card-inner pt-3">
-                                            <div className="d-flex justify-content-between">
-                                                <div className="flex-item">
-                                                    <div className="text-white d-flex flex-wrap"><span
-                                                        className="fs-2 me-1">175.2K</span><span
-                                                            className="align-self-end fs-14px pb-1"><em
-                                                                className="icon ni ni-arrow-long-up"></em>12.4%</span>
-                                                    </div>
-                                                    <h6 className="text-white">Subscriber</h6>
-                                                </div>
-                                                <div className="card-tools me-n1">
-                                                    <div className="dropdown"><a href="#"
-                                                        className="dropdown-toggle btn btn-icon btn-sm btn-trigger on-dark"
-                                                        data-bs-toggle="dropdown"><em
-                                                            className="icon ni ni-more-v"></em></a>
-                                                        <div
-                                                            className="dropdown-menu dropdown-menu-sm dropdown-menu-end">
-                                                            <ul className="link-list-opt no-bdr">
-                                                                <li><a href="#" className="active"><span>15
-                                                                    Days</span></a></li>
-                                                                <li><a href="#"><span>30 Days</span></a></li>
-                                                                <li><a href="#"><span>3 Months</span></a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="nk-ck-wrap mt-auto overflow-hidden rounded-bottom">
-                                            <div className="nk-cmwg1-ck"><canvas
-                                                className="campaign-line-chart-s1 rounded-bottom"
-                                                id="newSubscriber"></canvas></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-xxl-8 col-lg-7">
-                                <div className="card card-full">
-                                    <div className="card-inner">
-                                        <div className="card-title-group">
-                                            <div className="card-title">
-                                                <h6 className="title">Performance Overview</h6>
-                                            </div>
-                                            <div className="card-tools">
-                                                <ul className="card-tools-nav">
-                                                    <li><a href="#"><span>Week</span></a></li>
-                                                    <li className="active"><a href="#"><span>Month</span></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="card-inner pt-0">
-                                        <ul className="d-flex justify-content-center flex-wrap gx-3 mb-2">
-                                            <li className="align-center"><span className="dot"
-                                                data-bg="#733AEA"></span><span className="ms-1">Social</span>
-                                            </li>
-                                            <li className="align-center"><span className="dot"
-                                                data-bg="#0FCA7A"></span><span className="ms-1">Email</span>
-                                            </li>
-                                            <li className="align-center"><span className="dot"
-                                                data-bg="#F2426E"></span><span className="ms-1">Courses</span>
-                                            </li>
-                                            <li className="align-center"><span className="dot"
-                                                data-bg="#FD9722"></span><span className="ms-1">Google
-                                                    Ads</span></li>
-                                        </ul>
-                                        <div className="nk-cmwg2-ck"><canvas className="campaign-line-chart-s2"
-                                            id="performanceOverview"></canvas></div>
-                                        <div className="chart-label-group ms-5">
-                                            <div className="chart-label">03 Jan</div>
-                                            <div className="chart-label d-none d-sm-block">10 Jan</div>
-                                            <div className="chart-label d-none d-sm-block">17 Jan</div>
-                                            <div className="chart-label d-none d-sm-block">24 Jan</div>
-                                            <div className="chart-label">31 Jan</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-xxl-4 col-lg-5">
-                                <div className="card card-full">
-                                    <div className="card-inner">
-                                        <div className="card-title-group">
-                                            <div className="card-title">
-                                                <h6 className="title">Top Channels</h6>
-                                            </div>
-                                            <div className="card-tools"><a href="#" className="link">View All</a></div>
-                                        </div>
-                                    </div>
-                                    <div className="card-inner pt-0">
-                                        <ul className="gy-4">
-                                            <li
-                                                className="justify-between align-center border-bottom border-0 border-dashed">
-                                                <div className="align-center">
-                                                    <div className="user-avatar sq bg-transparent">
-                                                        <img src="/src/assets/images/icons/campaign/brand/google.png" alt="" />
-                                                    </div>
-                                                    <div className="ms-2">
-                                                        <div className="lead-text">Google </div>
-                                                        <div className="sub-text">SEO & PPC</div>
-                                                    </div>
-                                                </div>
-                                                <div className="align-center">
-                                                    <div className="sub-text me-2">70%</div>
-                                                    <div className="progress rounded-pill w-80px">
-                                                        <div className="progress-bar bg-success rounded-pill"
-                                                            data-progress="70"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li
-                                                className="justify-between align-center border-bottom border-0 border-dashed">
-                                                <div className="align-center">
-                                                    <div className="user-avatar sq bg-transparent">
-                                                        <img
-                                                            src="/src/assets/images/icons/campaign/brand/instagram.png"
-                                                            alt="" /></div>
-                                                    <div className="ms-2">
-                                                        <div className="lead-text">Instagram </div>
-                                                        <div className="sub-text">Social Media</div>
-                                                    </div>
-                                                </div>
-                                                <div className="align-center">
-                                                    <div className="sub-text me-2">86%</div>
-                                                    <div className="progress rounded-pill w-80px">
-                                                        <div className="progress-bar bg-primary rounded-pill"
-                                                            data-progress="86"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li
-                                                className="justify-between align-center border-bottom border-0 border-dashed">
-                                                <div className="align-center">
-                                                    <div className="user-avatar sq bg-transparent"><img
-                                                        src="/src/assets/images/icons/campaign/brand/linkedin.png"
-                                                        alt="" /></div>
-                                                    <div className="ms-2">
-                                                        <div className="lead-text">Linked In </div>
-                                                        <div className="sub-text">Social Media</div>
-                                                    </div>
-                                                </div>
-                                                <div className="align-center">
-                                                    <div className="sub-text me-2">75%</div>
-                                                    <div className="progress rounded-pill w-80px">
-                                                        <div className="progress-bar bg-danger rounded-pill"
-                                                            data-progress="75"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li
-                                                className="justify-between align-center border-bottom border-0 border-dashed">
-                                                <div className="align-center">
-                                                    <div className="user-avatar sq bg-transparent"><img
-                                                        src="/src/assets/images/icons/campaign/brand/slack.png" alt="" />
-                                                    </div>
-                                                    <div className="ms-2">
-                                                        <div className="lead-text">Slack </div>
-                                                        <div className="sub-text">Messanger</div>
-                                                    </div>
-                                                </div>
-                                                <div className="align-center">
-                                                    <div className="sub-text me-2">64%</div>
-                                                    <div className="progress rounded-pill w-80px">
-                                                        <div className="progress-bar bg-info rounded-pill"
-                                                            data-progress="64"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li className="justify-between align-center">
-                                                <div className="align-center">
-                                                    <div className="user-avatar sq bg-transparent"><img
-                                                        src="/src/assets/images/icons/campaign/brand/twitter.png"
-                                                        alt="" /></div>
-                                                    <div className="ms-2">
-                                                        <div className="lead-text">Twitter </div>
-                                                        <div className="sub-text">Social Media</div>
-                                                    </div>
-                                                </div>
-                                                <div className="align-center">
-                                                    <div className="sub-text me-2">54%</div>
-                                                    <div className="progress rounded-pill w-80px">
-                                                        <div className="progress-bar bg-warning rounded-pill"
-                                                            data-progress="54"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-xxl-8">
-                                <div className="card card-full">
-                                    <div className="card-inner">
-                                        <div className="card-title-group">
-                                            <div className="card-title">
-                                                <h6 className="title">Active Campaign</h6>
-                                            </div>
-                                            <div className="card-tools"><a href="#" className="link">View All</a></div>
-                                        </div>
-                                    </div>
-                                    <div className="card-inner py-0 mt-n2">
-                                        <div className="nk-tb-list nk-tb-flush nk-tb-dashed">
-                                            <div className="nk-tb-item nk-tb-head">
-                                                <div className="nk-tb-col"><span>Subject</span></div>
-                                                <div className="nk-tb-col tb-col-mb"><span>Channels</span></div>
-                                                <div className="nk-tb-col tb-col-sm"><span>Status</span></div>
-                                                <div className="nk-tb-col tb-col-md"><span>Assignee</span></div>
-                                                <div className="nk-tb-col text-end"><span>Date Range</span></div>
-                                            </div>
-                                            <div className="nk-tb-item">
-                                                <div className="nk-tb-col"><span className="tb-lead">Happy Christmas
-                                                    <span
-                                                        className="dot dot-success d-sm-none ms-1"></span></span><span
-                                                            className="tb-sub">Created on 01 Dec 22</span></div>
-                                                <div className="nk-tb-col tb-col-mb">
-                                                    <ul className="d-flex gx-1">
-                                                        <li className="text-facebook"><em
-                                                            className="icon ni ni-facebook-f"></em></li>
-                                                        <li className="text-instagram"><em
-                                                            className="icon ni ni-instagram"></em></li>
-                                                        <li className="text-linkedin"><em
-                                                            className="icon ni ni-linkedin"></em></li>
-                                                        <li className="text-twitter"><em
-                                                            className="icon ni ni-twitter"></em></li>
-                                                        <li className="text-youtube"><em
-                                                            className="icon ni ni-youtube-fill"></em></li>
-                                                    </ul>
-                                                </div>
-                                                <div className="nk-tb-col tb-col-sm">
-                                                    <div className="badge badge-dim bg-success">Live Now</div>
-                                                </div>
-                                                <div className="nk-tb-col tb-col-md">
-                                                    <div className="user-avatar-group">
-                                                        <div className="user-avatar xs"><img
-                                                            src="/src/assets/images/avatar/e-sm.jpg" alt="" /></div>
-                                                        <div className="user-avatar xs"><img
-                                                            src="/src/assets/images/avatar/f-sm.jpg" alt="" /></div>
-                                                        <div className="user-avatar xs"><img
-                                                            src="/src/assets/images/avatar/g-sm.jpg" alt="" /></div>
-                                                        <div className="user-avatar xs"><span>2+</span></div>
-                                                    </div>
-                                                </div>
-                                                <div className="nk-tb-col text-end"><span>01 Dec - 07 Dec</span>
-                                                </div>
-                                            </div>
-                                            <div className="nk-tb-item">
-                                                <div className="nk-tb-col"><span className="tb-lead">Black Friday <span
-                                                    className="dot dot-success d-sm-none ms-1"></span></span><span
-                                                        className="tb-sub">Created on 01 Dec 22</span></div>
-                                                <div className="nk-tb-col tb-col-mb">
-                                                    <ul className="d-flex gx-1">
-                                                        <li className="text-linkedin"><em
-                                                            className="icon ni ni-linkedin"></em></li>
-                                                        <li className="text-facebook"><em
-                                                            className="icon ni ni-facebook-f"></em></li>
-                                                        <li className="text-instagram"><em
-                                                            className="icon ni ni-instagram"></em></li>
-                                                        <li className="text-youtube"><em
-                                                            className="icon ni ni-youtube-fill"></em></li>
-                                                    </ul>
-                                                </div>
-                                                <div className="nk-tb-col tb-col-sm">
-                                                    <div className="badge badge-dim bg-success">Live Now</div>
-                                                </div>
-                                                <div className="nk-tb-col tb-col-md">
-                                                    <div className="user-avatar-group">
-                                                        <div className="user-avatar xs"><img
-                                                            src="/src/assets/images/avatar/h-sm.jpg" alt="" /></div>
-                                                        <div className="user-avatar xs"><img
-                                                            src="/src/assets/images/avatar/i-sm.jpg" alt="" /></div>
-                                                        <div className="user-avatar xs"><img
-                                                            src="/src/assets/images/avatar/j-sm.jpg" alt="" /></div>
-                                                        <div className="user-avatar xs"><span>7+</span></div>
-                                                    </div>
-                                                </div>
-                                                <div className="nk-tb-col text-end"><span>01 Dec - 07 Dec</span>
-                                                </div>
-                                            </div>
-                                            <div className="nk-tb-item">
-                                                <div className="nk-tb-col"><span className="tb-lead">Tree Plantation
-                                                    <span
-                                                        className="dot dot-warning d-sm-none ms-1"></span></span><span
-                                                            className="tb-sub">Created on 01 Jan 23</span></div>
-                                                <div className="nk-tb-col tb-col-mb">
-                                                    <ul className="d-flex gx-1">
-                                                        <li className="text-twitter"><em
-                                                            className="icon ni ni-twitter"></em></li>
-                                                        <li className="text-instagram"><em
-                                                            className="icon ni ni-instagram"></em></li>
-                                                        <li className="text-linkedin"><em
-                                                            className="icon ni ni-linkedin"></em></li>
-                                                    </ul>
-                                                </div>
-                                                <div className="nk-tb-col tb-col-sm">
-                                                    <div className="badge badge-dim bg-warning">Paused</div>
-                                                </div>
-                                                <div className="nk-tb-col tb-col-md">
-                                                    <div className="user-avatar-group">
-                                                        <div className="user-avatar xs"><img
-                                                            src="/src/assets/images/avatar/k-sm.jpg" alt="" /></div>
-                                                        <div className="user-avatar xs bg-pink"><span>AE</span>
-                                                        </div>
-                                                        <div className="user-avatar xs"><img
-                                                            src="/src/assets/images/avatar/e-sm.jpg" alt="" /></div>
-                                                        <div className="user-avatar xs"><span>3+</span></div>
-                                                    </div>
-                                                </div>
-                                                <div className="nk-tb-col text-end"><span>01 Dec - 07 Dec</span>
-                                                </div>
-                                            </div>
-                                            <div className="nk-tb-item">
-                                                <div className="nk-tb-col"><span className="tb-lead">Getaway Trailer
-                                                    <span
-                                                        className="dot dot-success d-sm-none ms-1"></span></span><span
-                                                            className="tb-sub">Created on 12 Dec 22</span></div>
-                                                <div className="nk-tb-col tb-col-mb">
-                                                    <ul className="d-flex gx-1">
-                                                        <li className="text-linkedin"><em
-                                                            className="icon ni ni-linkedin"></em></li>
-                                                        <li className="text-twitter"><em
-                                                            className="icon ni ni-twitter"></em></li>
-                                                        <li className="text-facebook"><em
-                                                            className="icon ni ni-facebook-f"></em></li>
-                                                        <li className="text-youtube"><em
-                                                            className="icon ni ni-youtube-fill"></em></li>
-                                                    </ul>
-                                                </div>
-                                                <div className="nk-tb-col tb-col-sm">
-                                                    <div className="badge badge-dim bg-success">Live Now</div>
-                                                </div>
-                                                <div className="nk-tb-col tb-col-md">
-                                                    <div className="user-avatar-group">
-                                                        <div className="user-avatar xs"><img
-                                                            src="/src/assets/images/avatar/i-sm.jpg" alt="" /></div>
-                                                        <div className="user-avatar xs"><img
-                                                            src="/src/assets/images/avatar/k-sm.jpg" alt="" /></div>
-                                                        <div className="user-avatar xs"><img
-                                                            src="/src/assets/images/avatar/e-sm.jpg" alt="" /></div>
-                                                        <div className="user-avatar xs"><img
-                                                            src="/src/assets/images/avatar/g-sm.jpg" alt="" /></div>
-                                                    </div>
-                                                </div>
-                                                <div className="nk-tb-col text-end"><span>01 Dec - 07 Dec</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-xxl-4 col-md-6">
-                                <div className="card card-full">
-                                    <div className="card-inner">
-                                        <div className="card-title-group">
-                                            <div className="card-title">
-                                                <h6 className="title">Key Statistics</h6>
-                                            </div>
-                                            <div className="card-tools me-n1 mt-n1">
-                                                <div className="dropdown"><a href="#"
-                                                    className="dropdown-toggle btn btn-icon btn-trigger"
-                                                    data-bs-toggle="dropdown"><em
-                                                        className="icon ni ni-more-h"></em></a>
-                                                    <div
-                                                        className="dropdown-menu dropdown-menu-sm dropdown-menu-end">
-                                                        <ul className="link-list-opt no-bdr">
-                                                            <li><a href="#" className="active"><span>15
-                                                                Days</span></a></li>
-                                                            <li><a href="#"><span>30 Days</span></a></li>
-                                                            <li><a href="#"><span>3 Months</span></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="card-inner pt-0">
-                                        <ul className="gy-4">
-                                            <li className="border-bottom border-0 border-dashed">
-                                                <div className="mb-1"><span
-                                                    className="fs-2 lh-1 mb-1 text-head">85.6K</span>
-                                                    <div className="sub-text">Average Like</div>
-                                                </div>
-                                                <div className="align-center">
-                                                    <div className="small text-primary me-2">54%</div>
-                                                    <div
-                                                        className="progress progress-md rounded-pill w-100 bg-primary-dim">
-                                                        <div className="progress-bar bg-primary rounded-pill"
-                                                            data-progress="54"></div>
-                                                    </div>
-                                                    <div className="dropdown ms-3"><a
-                                                        className="dropdown-toggle dropdown-indicator sub-text"
-                                                        href="#" type="button" data-bs-toggle="dropdown"
-                                                        data-bs-offset="0, 10">Dec 22 - Feb 22</a>
-                                                        <div className="dropdown-menu dropdown-menu-end text-right">
-                                                            <ul className="link-list-opt">
-                                                                <li><a href="#"><span>Dec 22 - Feb 22</span></a>
-                                                                </li>
-                                                                <li><a href="#"><span>Oct 22 - Dec 22</span></a>
-                                                                </li>
-                                                                <li><a href="#"><span>Aug 22 - Oct 22</span></a>
-                                                                </li>
-                                                                <li><a href="#"><span>Jun 22 - Aug 22</span></a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li className="border-bottom border-0 border-dashed">
-                                                <div className="mb-1"><span
-                                                    className="fs-2 lh-1 mb-1 text-head">42.7K</span>
-                                                    <div className="sub-text">Average Comments</div>
-                                                </div>
-                                                <div className="align-center">
-                                                    <div className="small text-danger me-2">84%</div>
-                                                    <div
-                                                        className="progress progress-md rounded-pill w-100 bg-danger-dim">
-                                                        <div className="progress-bar bg-danger rounded-pill"
-                                                            data-progress="84"></div>
-                                                    </div>
-                                                    <div className="dropdown ms-3"><a
-                                                        className="dropdown-toggle dropdown-indicator sub-text"
-                                                        href="#" type="button" data-bs-toggle="dropdown"
-                                                        data-bs-offset="0, 10">Dec 22 - Feb 22</a>
-                                                        <div className="dropdown-menu dropdown-menu-end text-right">
-                                                            <ul className="link-list-opt">
-                                                                <li><a href="#"><span>Dec 22 - Feb 22</span></a>
-                                                                </li>
-                                                                <li><a href="#"><span>Oct 22 - Dec 22</span></a>
-                                                                </li>
-                                                                <li><a href="#"><span>Aug 22 - Oct 22</span></a>
-                                                                </li>
-                                                                <li><a href="#"><span>Jun 22 - Aug 22</span></a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div className="mb-1"><span
-                                                    className="fs-2 lh-1 mb-1 text-head">25.4K</span>
-                                                    <div className="sub-text">Average Shares</div>
-                                                </div>
-                                                <div className="align-center">
-                                                    <div className="small text-success me-2">62%</div>
-                                                    <div
-                                                        className="progress progress-md rounded-pill w-100 bg-success-dim">
-                                                        <div className="progress-bar bg-success rounded-pill"
-                                                            data-progress="62"></div>
-                                                    </div>
-                                                    <div className="dropdown ms-3"><a
-                                                        className="dropdown-toggle dropdown-indicator sub-text"
-                                                        href="#" type="button" data-bs-toggle="dropdown"
-                                                        data-bs-offset="0, 10">Dec 22 - Feb 22</a>
-                                                        <div className="dropdown-menu dropdown-menu-end text-right">
-                                                            <ul className="link-list-opt">
-                                                                <li><a href="#"><span>Dec 22 - Feb 22</span></a>
-                                                                </li>
-                                                                <li><a href="#"><span>Oct 22 - Dec 22</span></a>
-                                                                </li>
-                                                                <li><a href="#"><span>Aug 22 - Oct 22</span></a>
-                                                                </li>
-                                                                <li><a href="#"><span>Jun 22 - Aug 22</span></a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-xxl-4 col-md-6">
-                                <div className="card card-full">
-                                    <div className="card-inner">
-                                        <div className="card-title-group">
-                                            <div className="card-title">
-                                                <h6 className="title">Instagram Campaign</h6>
-                                            </div>
-                                            <div className="card-tools">
-                                                <ul className="d-flex gx-2">
-                                                    <li><button
-                                                        className="btn btn-icon btn-sm btn-outline-light rounded-pill"><em
-                                                            className="icon ni ni-chevron-left"></em></button>
+                    <div className="nk-block-head-content">
+                        <div className="toggle-wrap nk-block-tools-toggle">
+                            <a
+                                href="#"
+                                className="btn btn-icon btn-trigger toggle-expand me-n1"
+                                data-target="pageMenu"
+                            >
+                                <em className="icon ni ni-more-v" />
+                            </a>
+                            <div
+                                className="toggle-expand-content"
+                                data-content="pageMenu"
+                            >
+                                <ul className="nk-block-tools g-3">
+                                    <li>
+                                        <div className="drodown">
+                                            <a
+                                                href="#"
+                                                className="dropdown-toggle btn btn-white btn-dim btn-outline-light"
+                                                data-bs-toggle="dropdown"
+                                            >
+                                                <em className="d-none d-sm-inline icon ni ni-calender-date" />
+                                                <span>
+                                                    <span className="d-none d-md-inline">
+                                                        Last
+                                                    </span>
+                                                    30 Days
+                                                </span>
+                                                <em className="dd-indc icon ni ni-chevron-right" />
+                                            </a>
+                                            <div className="dropdown-menu dropdown-menu-end">
+                                                <ul className="link-list-opt no-bdr">
+                                                    <li>
+                                                        <a href="#">
+                                                            <span>Last 30 Days</span>
+                                                        </a>
                                                     </li>
-                                                    <li><button
-                                                        className="btn btn-icon btn-sm btn-outline-primary rounded-pill"><em
-                                                            className="icon ni ni-chevron-right"></em></button>
+                                                    <li>
+                                                        <a href="#">
+                                                            <span>Last 6 Months</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <span>Last 1 Years</span>
+                                                        </a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className="card-inner pt-0">
-                                        <div className="rounded px-2 py-4 bg-primary">
-                                            <div className="d-flex">
-                                                <div className="w-50 px-4"><span
-                                                    className="fs-2 lh-1 mb-1 text-white">24.6K</span>
-                                                    <div className="fs-14px text-white text-opacity-75">New
-                                                        Followers</div>
-                                                </div>
-                                                <div className="border-start opacity-50"></div>
-                                                <div className="w-50 px-4"><span
-                                                    className="fs-2 lh-1 mb-1 text-white">120.0K</span>
-                                                    <div className="fs-14px text-white text-opacity-75">Followers
-                                                        Goal</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="nk-cmwg3-ck mt-3"><canvas className="campaign-line-chart-s3"
-                                            id="instagramCampaign"></canvas></div>
-                                        <div className="chart-label-group ms-5 mt-0">
-                                            <div className="chart-label">03 Jan</div>
-                                            <div className="chart-label d-none d-sm-block">10 Jan</div>
-                                            <div className="chart-label d-none d-sm-block">17 Jan</div>
-                                            <div className="chart-label d-none d-sm-block">24 Jan</div>
-                                            <div className="chart-label">31 Jan</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-xxl-4 col-md-6">
-                                <div className="card card-full">
-                                    <div className="card-inner">
-                                        <div className="card-title-group">
-                                            <div className="card-title">
-                                                <h6 className="title">Clicks by location</h6>
-                                            </div>
-                                            <div className="card-tools me-n1 mt-n1">
-                                                <div className="dropdown"><a href="#"
-                                                    className="dropdown-toggle btn btn-icon btn-trigger"
-                                                    data-bs-toggle="dropdown"><em
-                                                        className="icon ni ni-more-h"></em></a>
-                                                    <div
-                                                        className="dropdown-menu dropdown-menu-sm dropdown-menu-end">
-                                                        <ul className="link-list-opt no-bdr">
-                                                            <li><a href="#" className="active"><span>15
-                                                                Days</span></a></li>
-                                                            <li><a href="#"><span>30 Days</span></a></li>
-                                                            <li><a href="#"><span>3 Months</span></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="card-inner pt-0">
-                                        <ul className="my-n2">
-                                            <li
-                                                className="align-center justify-between py-1 gx-1 border-bottom border-0 border-dashed">
-                                                <div className="lead-text">United States</div>
-                                                <div className="sub-text">14,356</div>
-                                            </li>
-                                            <li
-                                                className="align-center justify-between py-1 gx-1 border-bottom border-0 border-dashed">
-                                                <div className="lead-text">Ireland</div>
-                                                <div className="sub-text">11,203</div>
-                                            </li>
-                                            <li
-                                                className="align-center justify-between py-1 gx-1 border-bottom border-0 border-dashed">
-                                                <div className="lead-text">United Kingdom</div>
-                                                <div className="sub-text">10,653</div>
-                                            </li>
-                                            <li
-                                                className="align-center justify-between py-1 gx-1 border-bottom border-0 border-dashed">
-                                                <div className="lead-text">Canada</div>
-                                                <div className="sub-text">7,215</div>
-                                            </li>
-                                            <li
-                                                className="align-center justify-between py-1 gx-1 border-bottom border-0 border-dashed">
-                                                <div className="lead-text">Australia</div>
-                                                <div className="sub-text">6,653</div>
-                                            </li>
-                                            <li
-                                                className="align-center justify-between py-1 gx-1 border-bottom border-0 border-dashed">
-                                                <div className="lead-text">Japan</div>
-                                                <div className="sub-text">3,945</div>
-                                            </li>
-                                            <li
-                                                className="align-center justify-between py-1 gx-1 border-bottom border-0 border-dashed">
-                                                <div className="lead-text">China</div>
-                                                <div className="sub-text">2,945</div>
-                                            </li>
-                                            <li className="align-center justify-between py-1 gx-1">
-                                                <div className="lead-text">France</div>
-                                                <div className="sub-text">954</div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-xxl-4 col-md-6">
-                                <div className="card card-full">
-                                    <div className="card-inner">
-                                        <div className="card-title-group">
-                                            <div className="card-title">
-                                                <h6 className="title">Web conv. rate</h6>
-                                            </div>
-                                            <div className="card-tools me-n1 mt-n1">
-                                                <div className="dropdown"><a href="#"
-                                                    className="dropdown-toggle btn btn-icon btn-trigger"
-                                                    data-bs-toggle="dropdown"><em
-                                                        className="icon ni ni-more-h"></em></a>
-                                                    <div
-                                                        className="dropdown-menu dropdown-menu-sm dropdown-menu-end">
-                                                        <ul className="link-list-opt no-bdr">
-                                                            <li><a href="#" className="active"><span>15
-                                                                Days</span></a></li>
-                                                            <li><a href="#"><span>30 Days</span></a></li>
-                                                            <li><a href="#"><span>3 Months</span></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="card-inner pt-0">
-                                        <div className=""><span className="fs-2 lh-1 mb-1 text-head">3.86%</span>
-                                            <div className="fs-14px">This month</div>
-                                        </div>
-                                        <div className="nk-cmwg4-ck mt-4"><canvas className="campaign-line-chart-s3"
-                                            id="webConvRate"></canvas></div>
-                                        <div className="chart-label-group ms-5 mt-0">
-                                            <div className="chart-label">Jan</div>
-                                            <div className="chart-label d-none d-sm-block">Feb</div>
-                                            <div className="chart-label d-none d-sm-block">Mar</div>
-                                            <div className="chart-label d-none d-sm-block">Apr</div>
-                                            <div className="chart-label d-none d-sm-block">May</div>
-                                            <div className="chart-label">Jun</div>
-                                        </div>
-                                    </div>
-                                </div>
+                                    </li>
+                                    <li className="nk-block-tools-opt">
+                                        <a href="#" className="btn btn-primary">
+                                            <em className="icon ni ni-reports" />
+                                            <span>Reports</span>
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <script src="/src/assets/js/charts/gd-campaign.js"></script>
+            <div className="nk-block">
+                <div className="row g-gs">
+                    <div className="col-sm-6">
+                        <div className="card card-bordered">
+                            <div className="card-inner">
+                                <div className="card-title-group align-start mb-2">
+                                    <div className="card-title">
+                                        <h6 className="title">Active Subscriptions</h6>
+                                    </div>
+                                    <div className="card-tools">
+                                        <em
+                                            className="card-hint icon ni ni-help-fill"
+                                            data-bs-toggle="tooltip"
+                                            data-bs-placement="left"
+                                            title="Total active subscription"
+                                        />
+                                    </div>
+                                </div>
+                                <div className="align-end flex-sm-wrap g-4 flex-md-nowrap">
+                                    <div className="nk-sale-data">
+                                        <span className="amount">9.69K</span>
+                                        <span className="sub-title">
+                                            <span className="change down text-danger">
+                                                <em className="icon ni ni-arrow-long-down" />
+                                                1.93%
+                                            </span>
+                                            since last month
+                                        </span>
+                                    </div>
+                                    <div className="nk-sales-ck">
+                                        <canvas
+                                            className="sales-bar-chart"
+                                            id="activeSubscription"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-sm-6">
+                        <div className="card card-bordered">
+                            <div className="card-inner">
+                                <div className="card-title-group align-start mb-2">
+                                    <div className="card-title">
+                                        <h6 className="title">Avg Subscriptions</h6>
+                                    </div>
+                                    <div className="card-tools">
+                                        <em
+                                            className="card-hint icon ni ni-help-fill"
+                                            data-bs-toggle="tooltip"
+                                            data-bs-placement="left"
+                                            title="Daily Avg. subscription"
+                                        />
+                                    </div>
+                                </div>
+                                <div className="align-end flex-sm-wrap g-4 flex-md-nowrap">
+                                    <div className="nk-sale-data">
+                                        <span className="amount">346.2</span>
+                                        <span className="sub-title">
+                                            <span className="change up text-success">
+                                                <em className="icon ni ni-arrow-long-up" />
+                                                2.45%
+                                            </span>
+                                            since last week
+                                        </span>
+                                    </div>
+                                    <div className="nk-sales-ck">
+                                        <canvas
+                                            className="sales-bar-chart"
+                                            id="totalSubscription"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-xl-6">
+                        <div className="card card-bordered h-100">
+                            <div className="card-inner">
+                                <div className="card-title-group align-start mb-2">
+                                    <div className="card-title">
+                                        <h6 className="title">Sales Revenue</h6>
+                                        <p>
+                                            In last 30 days revenue from subscription.
+                                        </p>
+                                    </div>
+                                    <div className="card-tools">
+                                        <em
+                                            className="card-hint icon ni ni-help-fill"
+                                            data-bs-toggle="tooltip"
+                                            data-bs-placement="left"
+                                            title="Revenue from subscription"
+                                        />
+                                    </div>
+                                </div>
+                                <div className="align-end gy-3 gx-5 flex-wrap flex-md-nowrap flex-xl-wrap">
+                                    <div className="nk-sale-data-group flex-md-nowrap g-4">
+                                        <div className="nk-sale-data">
+                                            <span className="amount">
+                                                14,299.59
+                                                <span className="change down text-danger">
+                                                    <em className="icon ni ni-arrow-long-down" />
+                                                    16.93%
+                                                </span>
+                                            </span>
+                                            <span className="sub-title">This Month</span>
+                                        </div>
+                                        <div className="nk-sale-data">
+                                            <span className="amount">
+                                                7,299.59
+                                                <span className="change up text-success">
+                                                    <em className="icon ni ni-arrow-long-up" />
+                                                    4.26%
+                                                </span>
+                                            </span>
+                                            <span className="sub-title">This Week</span>
+                                        </div>
+                                    </div>
+                                    <div className="nk-sales-ck sales-revenue">
+                                        <canvas
+                                            className="sales-bar-chart"
+                                            id="salesRevenue"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-xl-6">
+                        <div className="card card-bordered h-100">
+                            <div className="card-inner">
+                                <div className="card-title-group align-start gx-3 mb-3">
+                                    <div className="card-title">
+                                        <h6 className="title">Sales Overview</h6>
+                                        <p>In 30 days sales of product subscription.</p>
+                                    </div>
+                                    <div className="card-tools">
+                                        <div className="dropdown">
+                                            <a
+                                                href="#"
+                                                className="btn btn-primary btn-dim d-none d-sm-inline-flex"
+                                                data-bs-toggle="dropdown"
+                                            >
+                                                <em className="icon ni ni-download-cloud" />
+                                                <span>Report</span>
+                                            </a>
+                                            <a
+                                                href="#"
+                                                className="btn btn-icon btn-primary btn-dim d-sm-none"
+                                                data-bs-toggle="dropdown"
+                                            >
+                                                <em className="icon ni ni-download-cloud" />
+                                            </a>
+                                            <div className="dropdown-menu dropdown-menu-end">
+                                                <ul className="link-list-opt no-bdr">
+                                                    <li>
+                                                        <a href="#">
+                                                            <span>Download Mini Version</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <span>Download Full Version</span>
+                                                        </a>
+                                                    </li>
+                                                    <li className="divider" />
+                                                    <li>
+                                                        <a href="#">
+                                                            <em className="icon ni ni-opt-alt" />
+                                                            <span>More Options</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="nk-sale-data-group align-center justify-between gy-3 gx-5">
+                                    <div className="nk-sale-data">
+                                        <span className="amount">$82,944.60</span>
+                                    </div>
+                                    <div className="nk-sale-data">
+                                        <span className="amount sm">
+                                            1,937
+                                            <small>Subscribers</small>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div className="nk-sales-ck large pt-4">
+                                    <canvas
+                                        className="sales-overview-chart"
+                                        id="salesOverview"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-12">
+                        <div className="card card-bordered card-full">
+                            <div className="card-inner">
+                                <div className="card-title-group">
+                                    <div className="card-title">
+                                        <h6 className="title">
+                                            <span className="me-2">Invoices</span>{" "}
+                                            <a
+                                                href="history-payment.html"
+                                                className="link d-none d-sm-inline"
+                                            >
+                                                See History
+                                            </a>
+                                        </h6>
+                                    </div>
+                                    <div className="card-tools">
+                                        <ul className="card-tools-nav">
+                                            <li>
+                                                <a href="#">
+                                                    <span>Paid</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span>Pending</span>
+                                                </a>
+                                            </li>
+                                            <li className="active">
+                                                <a href="#">
+                                                    <span>All</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="card-inner p-0 border-top">
+                                <div className="nk-tb-list nk-tb-orders">
+                                    <div className="nk-tb-item nk-tb-head">
+                                        <div className="nk-tb-col">
+                                            <span>Order No.</span>
+                                        </div>
+                                        <div className="nk-tb-col tb-col-sm">
+                                            <span>Customer</span>
+                                        </div>
+                                        <div className="nk-tb-col tb-col-md">
+                                            <span>Date</span>
+                                        </div>
+                                        <div className="nk-tb-col tb-col-lg">
+                                            <span>Ref</span>
+                                        </div>
+                                        <div className="nk-tb-col">
+                                            <span>Amount</span>
+                                        </div>
+                                        <div className="nk-tb-col">
+                                            <span className="d-none d-sm-inline">
+                                                Status
+                                            </span>
+                                        </div>
+                                        <div className="nk-tb-col">
+                                            <span>&nbsp;</span>
+                                        </div>
+                                    </div>
+                                    <div className="nk-tb-item">
+                                        <div className="nk-tb-col">
+                                            <span className="tb-lead">
+                                                <a href="#">#95954</a>
+                                            </span>
+                                        </div>
+                                        <div className="nk-tb-col tb-col-sm">
+                                            <div className="user-card">
+                                                <div className="user-avatar user-avatar-sm bg-purple">
+                                                    <span>AB</span>
+                                                </div>
+                                                <div className="user-name">
+                                                    <span className="tb-lead">
+                                                        Abu Bin Ishtiyak
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="nk-tb-col tb-col-md">
+                                            <span className="tb-sub">02/11/2020</span>
+                                        </div>
+                                        <div className="nk-tb-col tb-col-lg">
+                                            <span className="tb-sub text-primary">
+                                                SUB-2309232
+                                            </span>
+                                        </div>
+                                        <div className="nk-tb-col">
+                                            <span className="tb-sub tb-amount">
+                                                4,596.75
+                                                <span>USD</span>
+                                            </span>
+                                        </div>
+                                        <div className="nk-tb-col">
+                                            <span className="badge badge-dot badge-dot-xs bg-success">
+                                                Paid
+                                            </span>
+                                        </div>
+                                        <div className="nk-tb-col nk-tb-col-action">
+                                            <div className="dropdown">
+                                                <a
+                                                    className="text-soft dropdown-toggle btn btn-icon btn-trigger"
+                                                    data-bs-toggle="dropdown"
+                                                >
+                                                    <em className="icon ni ni-more-h" />
+                                                </a>
+                                                <div className="dropdown-menu dropdown-menu-end dropdown-menu-xs">
+                                                    <ul className="link-list-plain">
+                                                        <li>
+                                                            <a href="#">View</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">Invoice</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">Print</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="nk-tb-item">
+                                        <div className="nk-tb-col">
+                                            <span className="tb-lead">
+                                                <a href="#">#95850</a>
+                                            </span>
+                                        </div>
+                                        <div className="nk-tb-col tb-col-sm">
+                                            <div className="user-card">
+                                                <div className="user-avatar user-avatar-sm bg-azure">
+                                                    <span>DE</span>
+                                                </div>
+                                                <div className="user-name">
+                                                    <span className="tb-lead">
+                                                        Desiree Edwards
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="nk-tb-col tb-col-md">
+                                            <span className="tb-sub">02/02/2020</span>
+                                        </div>
+                                        <div className="nk-tb-col tb-col-lg">
+                                            <span className="tb-sub text-primary">
+                                                SUB-2309154
+                                            </span>
+                                        </div>
+                                        <div className="nk-tb-col">
+                                            <span className="tb-sub tb-amount">
+                                                596.75
+                                                <span>USD</span>
+                                            </span>
+                                        </div>
+                                        <div className="nk-tb-col">
+                                            <span className="badge badge-dot badge-dot-xs bg-danger">
+                                                Canceled
+                                            </span>
+                                        </div>
+                                        <div className="nk-tb-col nk-tb-col-action">
+                                            <div className="dropdown">
+                                                <a
+                                                    className="text-soft dropdown-toggle btn btn-icon btn-trigger"
+                                                    data-bs-toggle="dropdown"
+                                                >
+                                                    <em className="icon ni ni-more-h" />
+                                                </a>
+                                                <div className="dropdown-menu dropdown-menu-end dropdown-menu-xs">
+                                                    <ul className="link-list-plain">
+                                                        <li>
+                                                            <a href="#">View</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">Remove</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="nk-tb-item">
+                                        <div className="nk-tb-col">
+                                            <span className="tb-lead">
+                                                <a href="#">#95812</a>
+                                            </span>
+                                        </div>
+                                        <div className="nk-tb-col tb-col-sm">
+                                            <div className="user-card">
+                                                <div className="user-avatar user-avatar-sm bg-warning">
+                                                    <img
+                                                        src="images/avatar/b-sm.jpg"
+                                                        alt=""
+                                                    />
+                                                </div>
+                                                <div className="user-name">
+                                                    <span className="tb-lead">
+                                                        Blanca Schultz
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="nk-tb-col tb-col-md">
+                                            <span className="tb-sub">02/01/2020</span>
+                                        </div>
+                                        <div className="nk-tb-col tb-col-lg">
+                                            <span className="tb-sub text-primary">
+                                                SUB-2309143
+                                            </span>
+                                        </div>
+                                        <div className="nk-tb-col">
+                                            <span className="tb-sub tb-amount">
+                                                199.99
+                                                <span>USD</span>
+                                            </span>
+                                        </div>
+                                        <div className="nk-tb-col">
+                                            <span className="badge badge-dot badge-dot-xs bg-success">
+                                                Paid
+                                            </span>
+                                        </div>
+                                        <div className="nk-tb-col nk-tb-col-action">
+                                            <div className="dropdown">
+                                                <a
+                                                    className="text-soft dropdown-toggle btn btn-icon btn-trigger"
+                                                    data-bs-toggle="dropdown"
+                                                >
+                                                    <em className="icon ni ni-more-h" />
+                                                </a>
+                                                <div className="dropdown-menu dropdown-menu-end dropdown-menu-xs">
+                                                    <ul className="link-list-plain">
+                                                        <li>
+                                                            <a href="#">View</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">Invoice</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">Print</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="nk-tb-item">
+                                        <div className="nk-tb-col">
+                                            <span className="tb-lead">
+                                                <a href="#">#95256</a>
+                                            </span>
+                                        </div>
+                                        <div className="nk-tb-col tb-col-sm">
+                                            <div className="user-card">
+                                                <div className="user-avatar user-avatar-sm bg-purple">
+                                                    <span>NL</span>
+                                                </div>
+                                                <div className="user-name">
+                                                    <span className="tb-lead">
+                                                        Naomi Lawrence
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="nk-tb-col tb-col-md">
+                                            <span className="tb-sub">01/29/2020</span>
+                                        </div>
+                                        <div className="nk-tb-col tb-col-lg">
+                                            <span className="tb-sub text-primary">
+                                                SUB-2305684
+                                            </span>
+                                        </div>
+                                        <div className="nk-tb-col">
+                                            <span className="tb-sub tb-amount">
+                                                1099.99
+                                                <span>USD</span>
+                                            </span>
+                                        </div>
+                                        <div className="nk-tb-col">
+                                            <span className="badge badge-dot badge-dot-xs bg-success">
+                                                Paid
+                                            </span>
+                                        </div>
+                                        <div className="nk-tb-col nk-tb-col-action">
+                                            <div className="dropdown">
+                                                <a
+                                                    className="text-soft dropdown-toggle btn btn-icon btn-trigger"
+                                                    data-bs-toggle="dropdown"
+                                                >
+                                                    <em className="icon ni ni-more-h" />
+                                                </a>
+                                                <div className="dropdown-menu dropdown-menu-end dropdown-menu-xs">
+                                                    <ul className="link-list-plain">
+                                                        <li>
+                                                            <a href="#">View</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">Invoice</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">Print</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="nk-tb-item">
+                                        <div className="nk-tb-col">
+                                            <span className="tb-lead">
+                                                <a href="#">#95135</a>
+                                            </span>
+                                        </div>
+                                        <div className="nk-tb-col tb-col-sm">
+                                            <div className="user-card">
+                                                <div className="user-avatar user-avatar-sm bg-success">
+                                                    <span>CH</span>
+                                                </div>
+                                                <div className="user-name">
+                                                    <span className="tb-lead">
+                                                        Cassandra Hogan
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="nk-tb-col tb-col-md">
+                                            <span className="tb-sub">01/29/2020</span>
+                                        </div>
+                                        <div className="nk-tb-col tb-col-lg">
+                                            <span className="tb-sub text-primary">
+                                                SUB-2305564
+                                            </span>
+                                        </div>
+                                        <div className="nk-tb-col">
+                                            <span className="tb-sub tb-amount">
+                                                1099.99
+                                                <span>USD</span>
+                                            </span>
+                                        </div>
+                                        <div className="nk-tb-col">
+                                            <span className="badge badge-dot badge-dot-xs bg-warning">
+                                                Due
+                                            </span>
+                                        </div>
+                                        <div className="nk-tb-col nk-tb-col-action">
+                                            <div className="dropdown">
+                                                <a
+                                                    className="text-soft dropdown-toggle btn btn-icon btn-trigger"
+                                                    data-bs-toggle="dropdown"
+                                                >
+                                                    <em className="icon ni ni-more-h" />
+                                                </a>
+                                                <div className="dropdown-menu dropdown-menu-end dropdown-menu-xs">
+                                                    <ul className="link-list-plain">
+                                                        <li>
+                                                            <a href="#">View</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">Invoice</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">Notify</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="card-inner-sm border-top text-center d-sm-none">
+                                <a href="#" className="btn btn-link btn-block">
+                                    See History
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-lg-6">
+                        <div className="card card-bordered card-full">
+                            <div className="card-inner border-bottom">
+                                <div className="card-title-group">
+                                    <div className="card-title">
+                                        <h6 className="title">Recent Activities</h6>
+                                    </div>
+                                    <div className="card-tools">
+                                        <ul className="card-tools-nav">
+                                            <li>
+                                                <a href="#">
+                                                    <span>Cancel</span>
+                                                </a>
+                                            </li>
+                                            <li className="active">
+                                                <a href="#">
+                                                    <span>All</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul className="nk-activity is-scrollable h-325px">
+                                <li className="nk-activity-item">
+                                    <div className="nk-activity-media user-avatar bg-success">
+                                        <img src="images/avatar/c-sm.jpg" alt="" />
+                                    </div>
+                                    <div className="nk-activity-data">
+                                        <div className="label">
+                                            Keith Jensen requested to Widthdrawl.
+                                        </div>
+                                        <span className="time">2 hours ago</span>
+                                    </div>
+                                </li>
+                                <li className="nk-activity-item">
+                                    <div className="nk-activity-media user-avatar bg-warning">
+                                        HS
+                                    </div>
+                                    <div className="nk-activity-data">
+                                        <div className="label">
+                                            Harry Simpson placed a Order.
+                                        </div>
+                                        <span className="time">2 hours ago</span>
+                                    </div>
+                                </li>
+                                <li className="nk-activity-item">
+                                    <div className="nk-activity-media user-avatar bg-azure">
+                                        SM
+                                    </div>
+                                    <div className="nk-activity-data">
+                                        <div className="label">
+                                            Stephanie Marshall got a huge bonus.
+                                        </div>
+                                        <span className="time">2 hours ago</span>
+                                    </div>
+                                </li>
+                                <li className="nk-activity-item">
+                                    <div className="nk-activity-media user-avatar bg-purple">
+                                        <img src="images/avatar/d-sm.jpg" alt="" />
+                                    </div>
+                                    <div className="nk-activity-data">
+                                        <div className="label">
+                                            Nicholas Carr deposited funds.
+                                        </div>
+                                        <span className="time">2 hours ago</span>
+                                    </div>
+                                </li>
+                                <li className="nk-activity-item">
+                                    <div className="nk-activity-media user-avatar bg-pink">
+                                        TM
+                                    </div>
+                                    <div className="nk-activity-data">
+                                        <div className="label">
+                                            Timothy Moreno placed a Order.
+                                        </div>
+                                        <span className="time">2 hours ago</span>
+                                    </div>
+                                </li>
+                                <li className="nk-activity-item">
+                                    <div className="nk-activity-media user-avatar bg-warning">
+                                        HS
+                                    </div>
+                                    <div className="nk-activity-data">
+                                        <div className="label">
+                                            Harry Simpson placed a Order.
+                                        </div>
+                                        <span className="time">2 hours ago</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div className="col-lg-6">
+                        <div className="card card-bordered h-100">
+                            <div className="card-inner border-bottom">
+                                <div className="card-title-group">
+                                    <div className="card-title">
+                                        <h6 className="title">Support Requests</h6>
+                                    </div>
+                                    <div className="card-tools">
+                                        <a href="#" className="link">
+                                            All Tickets
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul className="nk-support">
+                                <li className="nk-support-item">
+                                    <div className="user-avatar">
+                                        <img src="images/avatar/a-sm.jpg" alt="" />
+                                    </div>
+                                    <div className="nk-support-content">
+                                        <div className="title">
+                                            <span>Vincent Lopez</span>
+                                            <span className="badge badge-dot badge-dot-xs bg-warning ms-1">
+                                                Pending
+                                            </span>
+                                        </div>
+                                        <p>Thanks for contact us with your issues...</p>
+                                        <span className="time">6 min ago</span>
+                                    </div>
+                                </li>
+                                <li className="nk-support-item">
+                                    <div className="user-avatar bg-purple-dim">
+                                        <span>DM</span>
+                                    </div>
+                                    <div className="nk-support-content">
+                                        <div className="title">
+                                            <span>Daniel Moore</span>
+                                            <span className="badge badge-dot badge-dot-xs bg-info ms-1">
+                                                Open
+                                            </span>
+                                        </div>
+                                        <p>Thanks for contact us with your issues...</p>
+                                        <span className="time">2 Hours ago</span>
+                                    </div>
+                                </li>
+                                <li className="nk-support-item">
+                                    <div className="user-avatar">
+                                        <img src="images/avatar/b-sm.jpg" alt="" />
+                                    </div>
+                                    <div className="nk-support-content">
+                                        <div className="title">
+                                            <span>Larry Henry</span>
+                                            <span className="badge badge-dot badge-dot-xs bg-success ms-1">
+                                                Solved
+                                            </span>
+                                        </div>
+                                        <p>Thanks for contact us with your issues...</p>
+                                        <span className="time">3 Hours ago</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }

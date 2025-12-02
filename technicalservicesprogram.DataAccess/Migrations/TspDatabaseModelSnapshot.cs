@@ -17,7 +17,7 @@ namespace technicalservicesprogram.DataAccess.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.9")
+                .HasAnnotation("ProductVersion", "10.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -74,17 +74,97 @@ namespace technicalservicesprogram.DataAccess.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
                     b.Property<string>("NormalizedName")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Roles", (string)null);
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasDatabaseName("RoleNameIndex")
+                        .HasFilter("[NormalizedName] IS NOT NULL");
+
+                    b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "41c391e9-f548-48c1-9311-930802f48e09",
+                            ConcurrencyStamp = "57AA576B-CDFC-419B-8931-B87610968C26",
+                            Name = "SuperUser",
+                            NormalizedName = "SUPERUSER"
+                        },
+                        new
+                        {
+                            Id = "54b4e991-3813-4545-920d-7050e61b3058",
+                            ConcurrencyStamp = "DAD5A942-2152-4B60-ACD8-0D5E60A32963",
+                            Name = "NormalUser",
+                            NormalizedName = "NORMALUSER"
+                        },
+                        new
+                        {
+                            Id = "2e4a750b-d4f4-47d4-95fb-67f7df6d7c93",
+                            ConcurrencyStamp = "722F9B03-43AA-4B0A-AD14-5D1777DE506C",
+                            Name = "TechnicalUser",
+                            NormalizedName = "TECHNICALUSER"
+                        },
+                        new
+                        {
+                            Id = "c59b3110-479f-434b-ad9c-ac65242eca0c",
+                            ConcurrencyStamp = "21E52A10-B6FE-4748-913F-25872E628423",
+                            Name = "ManagerUser",
+                            NormalizedName = "MANAGERUSER"
+                        },
+                        new
+                        {
+                            Id = "384faf28-09f4-4156-9c10-7b9615e0f92f",
+                            ConcurrencyStamp = "7DC15A1B-4A16-4A30-A22E-6F54FD874E46",
+                            Name = "PresidentUser",
+                            NormalizedName = "PRESIDENTUSER"
+                        },
+                        new
+                        {
+                            Id = "28e7483a-559f-4147-9b50-950fccc41ea5",
+                            ConcurrencyStamp = "57AA576B-CDFC-419B-8931-B87610968C26",
+                            Name = "SuperUser",
+                            NormalizedName = "SUPERUSER"
+                        },
+                        new
+                        {
+                            Id = "a82c8941-6b63-4b90-ab65-ac65d3c98c4a",
+                            ConcurrencyStamp = "DAD5A942-2152-4B60-ACD8-0D5E60A32963",
+                            Name = "NormalUser",
+                            NormalizedName = "NORMALUSER"
+                        },
+                        new
+                        {
+                            Id = "88efb253-0c49-4852-9143-6a35010d4e5b",
+                            ConcurrencyStamp = "722F9B03-43AA-4B0A-AD14-5D1777DE506C",
+                            Name = "TechnicalUser",
+                            NormalizedName = "TECHNICALUSER"
+                        },
+                        new
+                        {
+                            Id = "0450413e-448d-4c98-a23d-08d0d5fef55b",
+                            ConcurrencyStamp = "21E52A10-B6FE-4748-913F-25872E628423",
+                            Name = "ManagerUser",
+                            NormalizedName = "MANAGERUSER"
+                        },
+                        new
+                        {
+                            Id = "69d840bd-4988-41c3-af3c-b32249bea165",
+                            ConcurrencyStamp = "7DC15A1B-4A16-4A30-A22E-6F54FD874E46",
+                            Name = "PresidentUser",
+                            NormalizedName = "PRESIDENTUSER"
+                        });
                 });
 
             modelBuilder.Entity("technicalservicesprogram.Entities.Core.Users.RoleClaim", b =>
@@ -103,11 +183,13 @@ namespace technicalservicesprogram.DataAccess.Migrations
 
                     b.Property<string>("RoleId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("RoleClaims", (string)null);
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetRoleClaims", (string)null);
                 });
 
             modelBuilder.Entity("technicalservicesprogram.Entities.Core.Users.UserApp", b =>
@@ -119,10 +201,12 @@ namespace technicalservicesprogram.DataAccess.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
@@ -144,10 +228,12 @@ namespace technicalservicesprogram.DataAccess.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NormalizedEmail")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
                     b.Property<string>("NormalizedUserName")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
                     b.Property<string>("PasswordHash")
                         .HasColumnType("nvarchar(max)");
@@ -177,7 +263,8 @@ namespace technicalservicesprogram.DataAccess.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("UserName")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
                     b.HasKey("Id");
 
@@ -185,17 +272,25 @@ namespace technicalservicesprogram.DataAccess.Migrations
                         .IsUnique()
                         .HasFilter("[Email] IS NOT NULL");
 
+                    b.HasIndex("NormalizedEmail")
+                        .HasDatabaseName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasDatabaseName("UserNameIndex")
+                        .HasFilter("[NormalizedUserName] IS NOT NULL");
+
                     b.HasIndex("SicilNo")
                         .IsUnique();
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("AspNetUsers", (string)null);
 
                     b.HasData(
                         new
                         {
-                            Id = "9a4f0a34-7636-403c-a76b-dff0641abb20",
+                            Id = "80ac1eee-599a-4ca7-8bf4-cba798af90e9",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d6df545a-b4ad-40bb-932d-9ced3ff8f751",
+                            ConcurrencyStamp = "00077fc7-8d4c-476a-bb7b-280c477ac234",
                             Email = "stoy@sakarya.edu.tr",
                             EmailConfirmed = false,
                             IsActive = true,
@@ -204,11 +299,11 @@ namespace technicalservicesprogram.DataAccess.Migrations
                             Name = "Serkan",
                             NormalizedEmail = "STOY@SAKARYA.EDU.TR",
                             NormalizedUserName = "STOY",
-                            PasswordHash = "XOnj12+jImVcaXKn7pbSspKwYeWSz4+eyQfF/TOMElQ=",
+                            PasswordHash = "NanUhnJqj+DsAQKggXcVImWW9IcNZeS2G5e+/6ihIMI=",
                             PhoneNumber = "0(564) 295 50 92",
                             PhoneNumberConfirmed = false,
                             Salt = "System.Byte[]",
-                            SecurityStamp = "649e1589-e876-442b-9e82-d41d5bf160f4",
+                            SecurityStamp = "8b45a77a-78a4-4da8-9c10-1dd6b0dab718",
                             SicilNo = "944",
                             SurName = "TOY",
                             TwoFactorEnabled = false,
@@ -216,9 +311,9 @@ namespace technicalservicesprogram.DataAccess.Migrations
                         },
                         new
                         {
-                            Id = "089d6e50-2972-43be-9f8f-6d379e146fe3",
+                            Id = "242c0c94-4526-4804-9bb5-82bf3572df60",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "e03f424a-fbb4-4a95-9ec9-c4a8f76bbb69",
+                            ConcurrencyStamp = "bafb0857-b312-4698-8278-00b22b8ff1a9",
                             Email = "stoy@sakarya.edu.tr",
                             EmailConfirmed = false,
                             IsActive = true,
@@ -227,11 +322,11 @@ namespace technicalservicesprogram.DataAccess.Migrations
                             Name = "Serkan",
                             NormalizedEmail = "STOY@SAKARYA.EDU.TR",
                             NormalizedUserName = "STOY",
-                            PasswordHash = "miism5gLi6mAAECA4DEdc2Uatfz0eDjpNcJRUcFaenA=",
+                            PasswordHash = "+MqlmcYh1RXUIYjWCo2gR1X1nQqN6/JnBJrwNGK+Gdw=",
                             PhoneNumber = "0(564) 295 50 92",
                             PhoneNumberConfirmed = false,
                             Salt = "System.Byte[]",
-                            SecurityStamp = "362f4c6b-1634-4bae-86f7-5205836f3c91",
+                            SecurityStamp = "bf188b3b-bdb0-46f7-9def-c6d4b91afaa4",
                             SicilNo = "944",
                             SurName = "TOY",
                             TwoFactorEnabled = false,
@@ -255,11 +350,13 @@ namespace technicalservicesprogram.DataAccess.Migrations
 
                     b.Property<string>("UserId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("UserClaims", (string)null);
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserClaims", (string)null);
                 });
 
             modelBuilder.Entity("technicalservicesprogram.Entities.Core.Users.UserLogin", b =>
@@ -275,11 +372,13 @@ namespace technicalservicesprogram.DataAccess.Migrations
 
                     b.Property<string>("UserId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("LoginProvider", "ProviderKey");
 
-                    b.ToTable("UserLogins", (string)null);
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserLogins", (string)null);
                 });
 
             modelBuilder.Entity("technicalservicesprogram.Entities.Core.Users.UserRole", b =>
@@ -292,7 +391,9 @@ namespace technicalservicesprogram.DataAccess.Migrations
 
                     b.HasKey("UserId", "RoleId");
 
-                    b.ToTable("UserRoles", (string)null);
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetUserRoles", (string)null);
                 });
 
             modelBuilder.Entity("technicalservicesprogram.Entities.Core.Users.UserToken", b =>
@@ -311,7 +412,7 @@ namespace technicalservicesprogram.DataAccess.Migrations
 
                     b.HasKey("UserId", "LoginProvider", "Name");
 
-                    b.ToTable("UserTokens", (string)null);
+                    b.ToTable("AspNetUserTokens", (string)null);
                 });
 
             modelBuilder.Entity("technicalservicesprogram.Entities.Core.CreateUpdateDelete.DateUserCreate", b =>
@@ -334,6 +435,57 @@ namespace technicalservicesprogram.DataAccess.Migrations
                         .IsRequired();
 
                     b.Navigation("UserApp");
+                });
+
+            modelBuilder.Entity("technicalservicesprogram.Entities.Core.Users.RoleClaim", b =>
+                {
+                    b.HasOne("technicalservicesprogram.Entities.Core.Users.RoleApp", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("technicalservicesprogram.Entities.Core.Users.UserClaim", b =>
+                {
+                    b.HasOne("technicalservicesprogram.Entities.Core.Users.UserApp", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("technicalservicesprogram.Entities.Core.Users.UserLogin", b =>
+                {
+                    b.HasOne("technicalservicesprogram.Entities.Core.Users.UserApp", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("technicalservicesprogram.Entities.Core.Users.UserRole", b =>
+                {
+                    b.HasOne("technicalservicesprogram.Entities.Core.Users.RoleApp", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("technicalservicesprogram.Entities.Core.Users.UserApp", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("technicalservicesprogram.Entities.Core.Users.UserToken", b =>
+                {
+                    b.HasOne("technicalservicesprogram.Entities.Core.Users.UserApp", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("technicalservicesprogram.Entities.Core.Users.UserApp", b =>

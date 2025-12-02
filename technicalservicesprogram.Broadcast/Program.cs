@@ -1,7 +1,8 @@
-using technicalservicesprogram.DataAccess;
-using technicalservicesprogram.Business;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using technicalservicesprogram.Business;
+using technicalservicesprogram.DataAccess;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,13 +11,27 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddDatabase(builder.Configuration);
 builder.Services.AddBusiness(builder.Configuration);
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddJwtBearer(jwt =>
+builder.Services.AddAuthentication(opt =>
+{
+    opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    opt.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(jwt =>
     {
+        jwt.SaveToken = true;
+        jwt.RequireHttpsMetadata = false;
         jwt.TokenValidationParameters = new TokenValidationParameters
         {
-            ValidateIssuerSigningKey = true,
-            IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(builder.Configuration.GetSection("AppSettings:Secret").Value)),
+            
+            ValidateIssuer = true,
+            ValidIssuer = builder.Configuration.GetSection("AppSettings:Issuer").Value,
+            ValidateAudience = true,
+            ValidAudience = builder.Configuration.GetSection("AppSettings:Audience").Value,            
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,            
+            IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(builder.Configuration.GetSection("AppSettings:Secret").Value!)),
+            ClockSkew = TimeSpan.Zero   
         };
     });
 
@@ -35,7 +50,7 @@ if (app.Environment.IsDevelopment())
 app.UseCors(x => x.AllowAnyMethod().AllowAnyHeader().SetIsOriginAllowed(origin => true).AllowCredentials());
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
