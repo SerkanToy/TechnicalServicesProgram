@@ -32,7 +32,7 @@ namespace technicalservicesprogram.Broadcast.Controllers
             this.apiResponse = apiResponse;
         }
 
-        [Authorize(Roles = "SuperUser")]
+        //[Authorize(Roles = "SuperUser")]
         [HttpGet,ActionName("kullanicilar")]
         public IActionResult All()
         {
