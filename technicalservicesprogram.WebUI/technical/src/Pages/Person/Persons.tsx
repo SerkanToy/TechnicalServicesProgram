@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useGetPersonsQuery } from './Api/personApi';
+import { Placeholder } from 'react-bootstrap';
 
 
 function Persons() {
 
-    const { data, isLoading, isError } = useGetPersonsQuery(null);
-
+    const { data, isLoading, isError, isFetching, isSuccess } = useGetPersonsQuery(null);
+        
     return (
         <div className="nk-content-wrap">
             <div className="nk-block-head">
@@ -450,19 +451,11 @@ function Persons() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="nk-tb-item">
-                                <div className="spinner-border" role="status">
-                                            <span className="visually-hidden"></span>                                            
-                                        </div></div>
-
+                                
                                 {
-                                    isLoading ?
-                                        <div className="spinner-border" role="status" style={{width:"100%"}}>
-                                            <span className="visually-hidden"></span>                                            
-                                        </div>
-                                        :
+                                    isSuccess ?                                        
                                         data.result.map((user:any) => 
-                                            <div key={user.sicilNo} className="nk-tb-item">
+                                            <div key={user.name} className="nk-tb-item">
                                                 <div className="nk-tb-col nk-tb-col-check">
                                                     <div className="custom-control custom-control-sm custom-checkbox notext">
                                                         <input
@@ -492,11 +485,12 @@ function Persons() {
                                                 </div>
                                                 <div className="nk-tb-col tb-col-mb">
                                                     <span className="tb-amount">
+                                                        {user.tCNo}
                                                         580.00 <span className="currency">USD</span>
                                                     </span>
                                                 </div>
                                                 <div className="nk-tb-col tb-col-md">
-                                                    <span>+124 394-1787</span>
+                                                    <span>{user.phoneNumber}</span>
                                                 </div>
                                                 <div className="nk-tb-col tb-col-xl">
                                                     <ul className="list-status">
@@ -615,6 +609,17 @@ function Persons() {
                                                 </div>
                                             </div>
                                         )
+                                        :
+                                        <Placeholder className="nk-tb-item" animation="glow">
+                                            <Placeholder className="nk-tb-col nk-tb-col-check" />
+                                            <Placeholder className="nk-tb-col" />
+                                            <Placeholder className="nk-tb-col tb-col-mb" />
+                                            <Placeholder className="nk-tb-col tb-col-md" />
+                                            <Placeholder className="nk-tb-col tb-col-xl" />
+                                            <Placeholder className="nk-tb-col tb-col-xl" />
+                                            <Placeholder className="nk-tb-col tb-col-md" />
+                                            <Placeholder className="nk-tb-col nk-tb-col-tools" />
+                                        </Placeholder>                               
                                 }
                             </div>
                         </div>

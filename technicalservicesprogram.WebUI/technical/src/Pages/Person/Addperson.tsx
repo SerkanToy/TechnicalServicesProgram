@@ -1,6 +1,10 @@
 import React from 'react'
+import { useCreatePersonMutation } from './Api/personApi'
 
 function Addperson() {
+
+    const [ AddPerson, result ] = useCreatePersonMutation();
+
     return (
         <div className="nk-content-wrap">
             <div className="nk-block-head nk-block-head-sm">

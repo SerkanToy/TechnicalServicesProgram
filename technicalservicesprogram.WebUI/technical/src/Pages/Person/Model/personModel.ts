@@ -1,10 +1,9 @@
 interface personModel {
     id: string;
     name: string;
-    surName: string;
+    surName: string | null;
     tCNo: string;
     sex: number;
-    userName: string | null;
     emailConfirmed: boolean | false;
     email: string;
     phoneNumber: string | null;
