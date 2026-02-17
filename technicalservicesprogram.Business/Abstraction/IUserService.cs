@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using technicalservicesprogram.Entities.Core;
+using technicalservicesprogram.Entities.DTo.Login;
+using technicalservicesprogram.Entities.DTo.Users;
 
 namespace technicalservicesprogram.Business.Abstraction
 {
     public interface IUserService
     {
+        Task<ApiResponse> Register(UserAddDto userAddDto);
+        Task<ApiResponse> Login(LoginDTO loginDTO);
     }
+
+
 }

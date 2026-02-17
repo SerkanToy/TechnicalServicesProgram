@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -6,7 +7,6 @@ using System.Security.Claims;
 using technicalservicesprogram.Business.Abstraction;
 using technicalservicesprogram.DataAccess.Context;
 using technicalservicesprogram.Entities.Core;
-using technicalservicesprogram.Entities.Core.Enum;
 using technicalservicesprogram.Entities.Core.Users;
 using technicalservicesprogram.Entities.DTo.Login;
 
@@ -15,12 +15,17 @@ namespace technicalservicesprogram.Business.Concrete
     public class AuthService: IAuthService
     {
         private readonly UserManager<UserApp> userManager;
+        private readonly RoleManager<RoleApp> roleManager;
         private readonly TspDatabase tspDatabase;
         private readonly ApiResponse response;
         private string secretKey;
         private string audience;
         private string issuer;
-        public AuthService(TspDatabase tspDatabase, ApiResponse response, IConfiguration _configuration, UserManager<UserApp> userManager)
+        public AuthService(TspDatabase tspDatabase, 
+                            ApiResponse response, 
+                            IConfiguration _configuration, 
+                            UserManager<UserApp> userManager,
+                            RoleManager<RoleApp> roleManager)
         {
             this.tspDatabase = tspDatabase;
             this.response = response;
@@ -28,11 +33,12 @@ namespace technicalservicesprogram.Business.Concrete
             audience = _configuration.GetSection("AppSettings:Audience").Value!;
             issuer = _configuration.GetSection("AppSettings:Issuer").Value!;
             this.userManager = userManager;
+            this.roleManager = roleManager;
         }
 
         public async Task<ApiResponse> Login(LoginDTO loginDTO)
         {
-            UserApp user = tspDatabase.UserApp.FirstOrDefault(x => x.Email.ToLower() == loginDTO.Email.ToLower());
+            UserApp user = await tspDatabase.UserApp.FirstOrDefaultAsync(x => x.Email.ToLower() == loginDTO.Email.ToLower());
 
             if(user is not null)
             {
